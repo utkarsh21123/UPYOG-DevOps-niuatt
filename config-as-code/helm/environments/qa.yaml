@@ -464,6 +464,14 @@ sv-services:
 vendor-management:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
+
+request-service:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"  
+
+vendor:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m" 
   
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
