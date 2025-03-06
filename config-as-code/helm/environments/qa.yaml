@@ -512,6 +512,20 @@ nginx-ingress:
   ssl-protocols: "TLSv1.2 TLSv1.3"
   ssl-ciphers: "EECDH+CHACHA20:EECDH+AES"
   ssl-ecdh-curve: "X25519:prime256v1:secp521r1:secp384r1"
+  controller:
+    
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+      prometheusRule:
+        enabled: true
+    service:
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-type: nlb
+        enabled: true
+      prometheusRule:
+        enabled: true
 
 cert-manager:
   email: "devops@egovernments.org"     ### Add email-id which used by cert-manager for certificates validation.
