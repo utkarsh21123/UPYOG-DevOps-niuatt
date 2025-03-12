@@ -3,7 +3,7 @@
 {{- $servicePort := .Values.alertmanager.service.port -}}
 {{- $routePrefix := .Values.alertmanager.alertmanagerSpec.routePrefix }}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: extensions/v1
 kind: Ingress
 metadata:
   name: {{ $serviceName }}
