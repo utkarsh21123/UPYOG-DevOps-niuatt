@@ -4467,7 +4467,7 @@ spec:
       required:
       - spec
       type: object
-  version: v1
+  #version: v1
   versions:
   - name: v1
     served: true
