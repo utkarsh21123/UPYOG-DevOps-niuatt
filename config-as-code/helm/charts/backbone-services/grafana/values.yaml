@@ -13,6 +13,8 @@ ingress:
     nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
     nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
 
+
+dashboardsFolder: /work-dir/upyog-configs/configs/monitoring-dashboards
 # Init Containers Configs
 initContainers:
   gitSync:
