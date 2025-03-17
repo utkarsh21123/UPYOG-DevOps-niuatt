@@ -17,8 +17,8 @@ ingress:
 initContainers:
   gitSync:
     enabled: true
-    repo: "git@github.com:egovernments/configs"
-    branch: "master"
+    repo: "git@github.com:niua-org/upyog-configs"
+    branch: "niua-dev"
 
 # Container Configs
 image:
