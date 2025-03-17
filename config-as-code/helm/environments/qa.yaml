@@ -913,3 +913,24 @@ edcrTenants: |
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
 
+  #grafana >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+grafana:
+  dashboardsFolder: /work-dir/upyog-configs/configs/monitoring-dashboards      
+  initContainers:
+    gitSync:
+      enabled: true
+      repo: "git@github.com:niua-org/upyog-configs"
+      branch: "niua-org" 
+
+
+      
+prometheus-operator:      
+  prometheus:
+    prometheusSpec:
+      resources:
+        requests:
+          memory: 5000Mi
+          cpu: 2000m
+        limits:
+          memory: 6000Mi
+          cpu: 2500m
