@@ -17,22 +17,20 @@ ingress:
 dashboardsFolder: /work-dir/upyog-configs/configs/monitoring-dashboards
 # Init Containers Configs
 initContainers:
-  gitSync:
-    enabled: true
-    repo: "git@github.com:niua-org/upyog-configs"
-    branch: "niua-dev"
-
-
+  - name: git-sync
+    image: k8s.gcr.io/git-sync:v3.1.1
     volumeMounts:
-      - mountPath: /etc/git-secret
-        name: git-ssh-secret
+      - name: git-ssh-secret
+        mountPath: /etc/git-secret
         readOnly: true
-    
-#volumes:
-#  - name: git-ssh-secret
-#    secret:
-#      secretName: git-creds        
-# Container Configs
+    env:
+      - name: GIT_SYNC_REPO
+        value: "git@github.com:niua-org/upyog-configs"
+      - name: GIT_SYNC_BRANCH
+        value: "niua-dev"
+      - name: GIT_SYNC_SSH
+        value: "true"
+        
 image:
   repository: grafana/grafana
   tag: 7.0.5
@@ -66,13 +64,14 @@ extraVolumeMounts: |
     mountPath: "/etc/grafana/provisioning/dashboards/dashboardproviders.yaml"
     subPath: dashboardproviders.yaml    
   - name: storage
-    mountPath: "/var/lib/grafana"    
+    mountPath: "/var/lib/grafana"   
 
-env: |
-  - name: GF_SERVER_DOMAIN
-    value: {{ .Values.global.domain | quote }}   
-  - name: GIT_SYNC_SSH
-    value: "true"
+    
+volumes:
+  - name: git-ssh-secret
+    secret:
+      secretName: git-creds
+
 resources:
  limits:
    cpu: 300m
