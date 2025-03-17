@@ -20,6 +20,18 @@ initContainers:
     repo: "git@github.com:niua-org/upyog-configs"
     branch: "niua-dev"
 
+
+    volumeMounts:
+      - mountPath: /etc/git-secret
+        name: git-ssh-secret
+        readOnly: true
+    env:
+      - name: GIT_SYNC_SSH
+        value: "true"
+volumes:
+  - name: git-ssh-secret
+    secret:
+      secretName: git-creds        
 # Container Configs
 image:
   repository: grafana/grafana
