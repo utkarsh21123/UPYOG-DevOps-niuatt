@@ -27,13 +27,11 @@ initContainers:
       - mountPath: /etc/git-secret
         name: git-ssh-secret
         readOnly: true
-    env:
-      - name: GIT_SYNC_SSH
-        value: "true"
-volumes:
-  - name: git-ssh-secret
-    secret:
-      secretName: git-creds        
+    
+#volumes:
+#  - name: git-ssh-secret
+#    secret:
+#      secretName: git-creds        
 # Container Configs
 image:
   repository: grafana/grafana
@@ -73,7 +71,8 @@ extraVolumeMounts: |
 env: |
   - name: GF_SERVER_DOMAIN
     value: {{ .Values.global.domain | quote }}   
-
+  - name: GIT_SYNC_SSH
+    value: "true"
 resources:
  limits:
    cpu: 300m
