@@ -33,7 +33,7 @@ jenkins:
 
   jobBuilder:    # Add jobBuilder repo's, add repo's ssh link
     repos: >-
-      'https://github.com/niua-org/UPYOG-NIUA.git', 'https://github.com/mcd89/UPYOG.git'
+      'https://github.com/niua-org/UPYOG-NIUA.git','https://github.com/mcd89/UPYOG.git'
   deploymentJobs:  # Setup deploymentJobs ACL 
     - name: ci    # deployment job name
       acl: [niua-org*nudmteam-ci] # GitHub team name, Members of the team get access to deployment job
