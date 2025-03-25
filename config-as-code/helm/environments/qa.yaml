@@ -528,7 +528,7 @@ nginx-ingress:
         enabled: true
     addHeaders:
       X-Content-Type-Options: nosniff
-      Access-Control-Allow-Origin: "https://mnptapp.manipurpropertytax.org/"
+      Access-Control-Allow-Origin: "https://niuatt.niua.in/"
       X-Frame-Options: DENY
       X-XSS-Protection: 1; mode=block
       Access-Control-Allow-Methods: GET, POST, OPTIONS
@@ -536,7 +536,7 @@ nginx-ingress:
       Strict-Transport-Security: max-age=31536000; includeSubDomains
       Referrer-Policy: strict-origin-when-cross-origin
       permissions-policy: geolocation=(), microphone=(), camera=()
-      content-security-policy:  "default-src 'self'; script-src 'self' 'sha256-cgLZa1MSXqvTyjABlg+B2tq65y0JLr9+ZYGuZYgEy3U='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://mnptapp-terraform.s3.ap-south-1.amazonaws.com; frame-ancestors 'none';"
+      content-security-policy:  "default-src 'self'; script-src 'self' 'sha256-cgLZa1MSXqvTyjABlg+B2tq65y0JLr9+ZYGuZYgEy3U='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://niuatt-terraform.s3.ap-south-1.amazonaws.com; frame-ancestors 'none';"
 cert-manager:
   email: "devops@egovernments.org"     ### Add email-id which used by cert-manager for certificates validation.
   
