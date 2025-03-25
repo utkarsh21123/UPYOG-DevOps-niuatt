@@ -526,7 +526,17 @@ nginx-ingress:
         enabled: true
       prometheusRule:
         enabled: true
-
+    addHeaders:
+      X-Content-Type-Options: nosniff
+      Access-Control-Allow-Origin: "https://mnptapp.manipurpropertytax.org/"
+      X-Frame-Options: DENY
+      X-XSS-Protection: 1; mode=block
+      Access-Control-Allow-Methods: GET, POST, OPTIONS
+      Access-Control-Allow-Headers: DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Referrer-Policy: strict-origin-when-cross-origin
+      permissions-policy: geolocation=(), microphone=(), camera=()
+      content-security-policy:  "default-src 'self'; script-src 'self' 'sha256-cgLZa1MSXqvTyjABlg+B2tq65y0JLr9+ZYGuZYgEy3U='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://mnptapp-terraform.s3.ap-south-1.amazonaws.com; frame-ancestors 'none';"
 cert-manager:
   email: "devops@egovernments.org"     ### Add email-id which used by cert-manager for certificates validation.
   
