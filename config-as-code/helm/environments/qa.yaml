@@ -513,7 +513,8 @@ nginx-ingress:
   ssl-ciphers: "EECDH+CHACHA20:EECDH+AES"
   ssl-ecdh-curve: "X25519:prime256v1:secp521r1:secp384r1"
   controller:
-    
+  memory_limits: 512Mi
+  heap: -Xmx256m -Xms256m
     metrics:
       enabled: true
       serviceMonitor:
@@ -526,6 +527,7 @@ nginx-ingress:
         enabled: true
       prometheusRule:
         enabled: true
+
    # addHeaders:
      # X-Content-Type-Options: nosniff
      # Access-Control-Allow-Origin: "https://niuatt.niua.in/"
