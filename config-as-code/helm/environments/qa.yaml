@@ -512,21 +512,21 @@ nginx-ingress:
   ssl-protocols: "TLSv1.2 TLSv1.3"
   ssl-ciphers: "EECDH+CHACHA20:EECDH+AES"
   ssl-ecdh-curve: "X25519:prime256v1:secp521r1:secp384r1"
-  controller:
-  memory_limits: 512Mi
-  heap: -Xmx256m -Xms256m
-    metrics:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-      prometheusRule:
-        enabled: true
-    service:
-      annotations:
-        service.beta.kubernetes.io/aws-load-balancer-type: nlb
-        enabled: true
-      prometheusRule:
-        enabled: true
+  #controller:
+  #memory_limits: 512Mi
+  #heap: -Xmx256m -Xms256m
+  #  metrics:
+  #    enabled: true
+  #    serviceMonitor:
+  #      enabled: true
+  #    prometheusRule:
+  #      enabled: true
+  #  service:
+  #    annotations:
+  #      service.beta.kubernetes.io/aws-load-balancer-type: nlb
+  #      enabled: true
+  #    prometheusRule:
+  #      enabled: true
 
    # addHeaders:
      # X-Content-Type-Options: nosniff
