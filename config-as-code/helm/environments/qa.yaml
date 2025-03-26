@@ -367,7 +367,7 @@ egov-persister:
       branch: "niua-dev"                                    ##### Change repo branch with Your fork Repo branch
 
 pgr-services:
-  memory_limits: 512Mi
+  memory_limits: 256Mi
 
 egov-data-uploader:
   initContainers:
@@ -433,8 +433,8 @@ pdf-service:
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 asset-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 property-services:
   memory_limits: 512Mi
@@ -453,20 +453,20 @@ billing-service:
   heap: "-Xmx256m -Xms256m"
 
 egf-master:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 kibana-v1:
   memory_limits: 256Mi
   heap: "-Xmx128m -Xms128m"
 
 adv-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 sv-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 vendor-management:
   memory_limits: 256Mi
@@ -477,8 +477,8 @@ request-service:
   heap: "-Xmx128m -Xms128m" 
 
 cnd-service:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"    
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"    
 
 vendor:
   memory_limits: 256Mi
