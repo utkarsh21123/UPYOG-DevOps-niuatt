@@ -441,12 +441,12 @@ property-services:
   heap: "-Xmx256m -Xms256m"
 
 pet-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 ewaste-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
   
 billing-service:
   memory_limits: 512Mi
@@ -457,8 +457,8 @@ egf-master:
   heap: "-Xmx256m -Xms256m"
 
 kibana-v1:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 adv-services:
   memory_limits: 512Mi
@@ -469,20 +469,20 @@ sv-services:
   heap: "-Xmx256m -Xms256m"
 
 vendor-management:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"
 
 request-service:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m" 
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m" 
 
 cnd-service:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"    
 
 vendor:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m" 
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m" 
   
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
