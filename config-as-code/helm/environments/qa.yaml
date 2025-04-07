@@ -484,7 +484,10 @@ cnd-service:
 vendor:
   memory_limits: 256Mi
   heap: "-Xmx128m -Xms128m" 
-  
+
+cnd-calculator:
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"   
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
   erp-host: "https://mohali-qa.egovernments.org/"
