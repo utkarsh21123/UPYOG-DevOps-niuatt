@@ -384,14 +384,14 @@ egov-searcher:
       branch: "niua-dev"                                   ##### Change repo branch with Your fork Repo branch
 
 dashboard-analytics:
-  config-schema-paths: "file:///work-dir/upyog-configs/egov-dss-dashboards/dashboard-analytics/*.json"
+  config-schema-paths: "file:///work-dir/upyog-configs/configs/egov-dss-dashboards/dashboard-analytics/*.json"
   initContainers:
     gitSync:
       repo: "git@github.com:niua-org/upyog-configs"      ##### Change repo url with Your fork Repo url
       branch: "niua-dev"                                    ##### Change repo branch with Your fork Repo branch
 
 dashboard-ingest:
-  config-schema-paths: "file:///work-dir/upyog-configs/egov-dss-dashboards/dashboard-ingest/*.json"
+  config-schema-paths: "file:///work-dir/upyog-configs/configs/egov-dss-dashboards/dashboard-ingest/*.json"
   initContainers:
     gitSync:
       repo: "git@github.com:niua-org/upyog-configs"      ##### Change repo url with Your fork Repo url
