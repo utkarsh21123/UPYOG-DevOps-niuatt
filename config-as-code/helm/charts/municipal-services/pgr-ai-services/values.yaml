@@ -142,6 +142,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-location
+  - name: EGOV_URL_SHORTNER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-url-shortening
   - name: EGOV_USR_EVENTS_NOTIFICATION_ENABLED
     value: "true"
   - name: EGOV_USR_EVENTS_CREATE_TOPIC
