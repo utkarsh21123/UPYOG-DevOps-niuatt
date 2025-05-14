@@ -467,8 +467,8 @@ adv-services:
   heap: "-Xmx128m -Xms128m"
 
 sv-services:
-  memory_limits: 256Mi
-  heap: "-Xmx128m -Xms128m"
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
 
 vendor-management:
   memory_limits: 256Mi
