@@ -128,7 +128,12 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-url-shortening      
+        key: egov-url-shortening
+  - name: EGOV_LOCATION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-location            
   - name: SECURITY_BASIC_ENABLED
     value: "false"  
   - name: MANAGEMENT_SECURITY_ENABLED
