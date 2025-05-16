@@ -59,7 +59,7 @@ env: |
     value: {{ index .Values "heap" | quote }}
   - name: SERVER_PORT
     value: "8080"
-  - name: EGOV.MDMS.HOST
+  - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
