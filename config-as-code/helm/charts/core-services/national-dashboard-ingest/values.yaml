@@ -59,6 +59,11 @@ env: |
     value: {{ index .Values "heap" | quote }}
   - name: SERVER_PORT
     value: "8080"
+  - name: MDMS_SERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
   - name: JAVA_ARGS
     value: {{ index .Values "java-args" | quote }}
   - name: SECURITY_BASIC_ENABLED
