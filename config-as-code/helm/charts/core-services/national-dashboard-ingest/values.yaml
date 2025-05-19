@@ -71,5 +71,5 @@ env: |
   - name: MANAGEMENT_SECURITY_ENABLED
     value: "false"
   - name: NATIONAL_DASHBOARD_USER
-    value: {"SUPERUUID":"4afdda02-2a2b-4f40-952a-ac4eb71f8895"}
+    value: '{"SUPERUUID":"4afdda02-2a2b-4f40-952a-ac4eb71f8895"}'
     
