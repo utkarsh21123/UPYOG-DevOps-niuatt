@@ -460,8 +460,8 @@ billing-service:
   heap: "-Xmx256m -Xms256m"
 
 egf-master:
-  memory_limits: 256Mi
-  heap: "-Xmx128m -Xms128m"
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
 
 kibana-v1:
   memory_limits: 256Mi
