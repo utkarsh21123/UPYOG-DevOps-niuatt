@@ -6,7 +6,7 @@ labels:
 # Container Configs
 image:
   repository: "national-dashboard-kafka-pipeline"
-replicas: "3"
+replicas: "1"
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx512m -Xms512m"
