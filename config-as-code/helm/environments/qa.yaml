@@ -783,7 +783,9 @@ kafka-v2:
 ### Kafka Connect <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 kafka-connect:
   image:
-    tag: latest
+    tag: 8.1.3
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
 
 
 # zookeeper-v2 AWS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
