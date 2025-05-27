@@ -784,8 +784,8 @@ kafka-v2:
 kafka-connect:
   image:
     tag: 8.1.3
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+  memory_limits: 1Gi
+  heap: "-Xmx756m -Xms756m"
 
 
 # zookeeper-v2 AWS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
