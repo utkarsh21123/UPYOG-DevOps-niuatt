@@ -58,6 +58,26 @@ env: |
     value: "9200"  
   - name: ES_INDEX_NAME
     value: "transaction"
+  - name: SERVICES_ESINDEXER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: SERVICES_ESINDEXER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+  - name: EGOV_ES_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: EGOV_ES_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
   - name: ES_DOCUMENT_TYPE
     value: "transaction"
   - name: TOP_PERFORMANCE_RECORD_COUNT
