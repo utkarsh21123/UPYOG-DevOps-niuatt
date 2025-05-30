@@ -507,6 +507,10 @@ egov-apportion-service:
   memory_limits: 512Mi
   heap: -Xmx256m -Xms256m
 
+fsm:
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m"  
+
 # docs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 redoc:
   replicas: 1
