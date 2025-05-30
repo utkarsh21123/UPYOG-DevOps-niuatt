@@ -644,6 +644,10 @@ egov-hrms:
 chb-services:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
+  
+fsm:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
 
 employee-dashboard:  # Configuration for the employee-dashboard module
   memory_limits: 512Mi  # Set the maximum memory limit for the service to 512 MiB
