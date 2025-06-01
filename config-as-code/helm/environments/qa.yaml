@@ -506,7 +506,11 @@ land-services:
 
 noc-services:
   memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"    
+  heap: "-Xmx256m -Xms256m"   
+
+egov-location:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"   
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
   erp-host: "https://url/"
