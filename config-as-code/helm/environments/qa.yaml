@@ -503,6 +503,10 @@ pgr-ai-services:
 land-services:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"  
+
+noc-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"    
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
   erp-host: "https://url/"
