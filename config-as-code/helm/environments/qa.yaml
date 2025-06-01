@@ -499,6 +499,14 @@ cnd-calculator:
 pgr-ai-services:
   memory_limits: 256Mi
   heap: "-Xmx128m -Xms128m"   
+
+land-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"  
+
+noc-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"    
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
   erp-host: "https://url/"
