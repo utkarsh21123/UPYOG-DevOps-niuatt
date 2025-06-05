@@ -318,7 +318,7 @@ egov-data-uploader:
       branch: "niua-dev"                                    ##### Change repo branch with Your fork Repo branch
 
 egov-searcher:
-  search-yaml-path: "file:///work-dir/upyog-configs/configs/egov-searcher/rainmaker-pgr-v2.yml,file:///work-dir/upyog-configs/configs/egov-searcher/weekly-impact-emailer-searcher.yml,file:///work-dir/upyog-configs/configs/egov-searcher/PTDemandBasedSearcher.yml,file:///work-dir/upyog-configs/configs/egov-searcher/bill-genie.yml,file:///work-dir/upyog-configs/configs/egov-searcher/rainmaker-tl.yml,file:///work-dir/upyog-configs/configs/egov-searcher/localitySearcher.yml, file:///work-dir/upyog-configs/configs/egov-searcher/inboxFSMSearch.yml,"
+  search-yaml-path: "file:///work-dir/upyog-configs/configs/egov-searcher/rainmaker-pgr-v2.yml,file:///work-dir/upyog-configs/configs/egov-searcher/weekly-impact-emailer-searcher.yml,file:///work-dir/upyog-configs/configs/egov-searcher/PTDemandBasedSearcher.yml,file:///work-dir/upyog-configs/configs/egov-searcher/bill-genie.yml,file:///work-dir/upyog-configs/configs/egov-searcher/rainmaker-tl.yml,file:///work-dir/upyog-configs/configs/egov-searcher/localitySearcher.yml, file:///work-dir/upyog-configs/configs/egov-searcher/inboxFSMSearch.yml,file:///work-dir/upyog-configs/configs/egov-searcher/sewerageopensearch.yml,file:///work-dir/upyog-configs/configs/egov-searcher/wateropensearch.yml"
   initContainers:
     gitSync:
       repo: "git@github.com:niua-org/upyog-configs-niuatt"     ##### Change repo url with Your fork Repo url
