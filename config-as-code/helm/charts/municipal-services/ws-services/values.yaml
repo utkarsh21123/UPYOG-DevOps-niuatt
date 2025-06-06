@@ -62,6 +62,44 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-location
+   - name: SERVICES_ESINDEXER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: es-indexer-host
+  - name: SERVICES_ESINDEXER_HOST_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: es-indexer-host  
+  - name: SERVICES_ESINDEXER_HOST_PORT
+    value: "9200"  
+  - name: ES_INDEX_NAME
+    value: "transaction"
+  - name: SERVICES_ESINDEXER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: SERVICES_ESINDEXER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+  - name: EGOV_ES_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: EGOV_ES_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+  - name: ES_DOCUMENT_TYPE
+    value: "transaction"
+  - name: EGOV_SERVICES_ESINDEXER_HOST_SEARCH
+    value: "/_search"      
   - name: EGOV_LOCALIZATION_HOST
     valueFrom:
       configMapKeyRef:
