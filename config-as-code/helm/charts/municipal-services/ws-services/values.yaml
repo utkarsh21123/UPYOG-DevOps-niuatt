@@ -62,7 +62,7 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-location
-   - name: SERVICES_ESINDEXER_HOST
+  - name: SERVICES_ESINDEXER_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-config
