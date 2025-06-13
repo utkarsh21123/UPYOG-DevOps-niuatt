@@ -22,7 +22,7 @@ image:
   repository: "tp-services"
 replicas: "1"
 healthChecks:
-  enabled: true
+  enabled: false
   livenessProbePath: "/tp-services/health"
   readinessProbePath: "/tp-services/health"
 appType: "java-spring"
