@@ -20,7 +20,7 @@ masterService: "elasticsearch-master"
 roles:
   - ingest
   - data
-
+  - transform
 minimumMasterNodes: 2
 
 esMajorVersion: ""
