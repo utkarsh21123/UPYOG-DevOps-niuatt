@@ -93,9 +93,11 @@ env: |
         key: tracer-errors-provideexceptionindetails
   {{- end }}
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-request-service
-  - name: PERSISTER_CREATE_TANKER_TOPIC
-    value: create-water-tanker-booking
+    value: egov-tp-services
+  - name: PERSISTER_CREATE_TREE_PRUNING_TOPIC
+    value: create-tree-pruning-booking
+  - name: PERSISTER_UPDATE_TREE_PRUNING_TOPIC
+    value: update-tree-pruning-booking
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
@@ -117,8 +119,8 @@ env: |
     value: "false"  
   - name: MANAGEMENT_SECURITY_ENABLED
     value: "false"
-  - name: EGOV_IDGEN_WATER_TANKER_BOOKING_FORMAT
-    value: {{ index .Values "egov-idgen-water-tanker-booking-format" | quote }}        
+  - name: EGOV_IDGEN_TREE_PRUNING_BOOKING_FORMAT
+    value: {{ index .Values "egov-idgen-tree-pruning-booking-format" | quote }}        
   - name: NOTIFICATION_SMS_ENABLED
     value: {{ index .Values "notification-sms-enabled" | quote }}
   - name: ASSESSMENT_WORKFLOW_ENABLED
