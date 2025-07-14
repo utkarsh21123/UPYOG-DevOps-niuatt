@@ -453,6 +453,10 @@ pdf-service:
 
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+vehicle:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
 asset-services:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
