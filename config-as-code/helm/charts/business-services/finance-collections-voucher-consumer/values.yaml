@@ -67,7 +67,7 @@ env: |
   - name: SI_MICROSERVICE_USER
     value: "SIFINANCE"
   - name: SI_MICROSERVICE_PASSWORD
-    value: "sifinance123@"
+    value: "eGov@123"
   - name: SI_MICROSERVICE_USERTYPE
     value: "SYSTEM"
   - name: SI_MICROSERVICE_SCOPE
