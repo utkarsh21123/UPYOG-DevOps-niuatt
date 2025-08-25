@@ -365,7 +365,7 @@ egov-mdms-service:
   initContainers:
     gitSync:
       repo: "git@github.com:niua-org/upyog-mdms-data-niuatt"   ##### Change repo url with Your fork Repo url
-      branch: "niua-dev"                                         ##### Change repo branch with Your fork Repo branch
+      branch: "master"                                         ##### Change repo branch with Your fork Repo branch
   mdms-folder: "upyog-mdms-data-niuatt"
   masters-config-url: "file:///work-dir/upyog-mdms-data-niuatt/master-config.json"
   java-args: -Dspring.profiles.active=monitoring
