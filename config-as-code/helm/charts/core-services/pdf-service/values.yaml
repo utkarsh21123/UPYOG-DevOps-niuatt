@@ -20,21 +20,20 @@ initContainers:
     enabled: true
     repo: "git@github.com:egovernments/configs"
     branch: "master"
-    
   extraInitContainers: |
-  - name: kafka-check
-    image: busybox:1.36
-    command:
-      - sh
-      - -c
-      - |
-        echo "Waiting for Kafka..."
-        until nc -z release-name-kafka-controller-headless.kafka-kraft 9092 && \
-              nc -z kafka-v2-infra.kafka-cluster 9092; do
-          echo "Kafka not available, retrying..."
-          sleep 5
-        done
-        echo "Kafka is available"  
+    - name: kafka-check
+      image: busybox:1.36
+      command:
+        - sh
+        - -c
+        - |
+          echo "Waiting for Kafka..."
+          until nc -z release-name-kafka-controller-headless.kafka-kraft 9092 && \
+                nc -z kafka-v2-infra.kafka-cluster 9092; do
+            echo "Kafka not available, retrying..."
+            sleep 5
+          done
+          echo "Kafka is available"  
   
 
 
