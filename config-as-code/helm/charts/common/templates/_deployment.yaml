@@ -71,9 +71,9 @@ spec:
       {{- with .Values.initContainers.extraInitContainers }}
        {{- toYaml . | nindent 8 }}
       {{- end }}
-      #{{- with .Values.initContainers.extraInitContainers }}
+      # {{- with .Values.initContainers.extraInitContainers }}
       #  {{- tpl . $ | nindent 8 }}
-      #{{- end }}
+      # {{- end }}
       {{- if .Values.initContainers.dbMigration.enabled }}
       {{ with .Values.initContainers.dbMigration}}
       - name: "db-migration"
@@ -163,4 +163,5 @@ spec:
 {{ toYaml . | indent 8 }}
     {{- end }}
 {{- end -}}
+
 
