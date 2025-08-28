@@ -59,6 +59,16 @@ env: |
       secretKeyRef:
         name: db
         key: password
+################
+  - name: SPRING_KAFKA_PRODUCER_RETRIES
+    value: "10"
+  - name: SPRING_KAFKA_PRODUCER_PROPERTIES_RETRY_BACKOFF_MS
+    value: "5000"
+  - name: SPRING_KAFKA_CONSUMER_AUTO_OFFSET_RESET
+    value: "earliest"
+  - name: SPRING_KAFKA_LISTENER_CONCURRENCY
+    value: "3"
+################
   - name: KAFKA_BROKER_HOST
     valueFrom:
       configMapKeyRef:
