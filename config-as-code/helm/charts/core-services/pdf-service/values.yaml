@@ -94,3 +94,16 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: egov-services-fqdn-name
+# Readiness Probe
+readinessProbe:
+  exec:
+    command:
+      - sh
+      - -c
+      - |
+        nc -z release-name-kafka-controller-headless.kafka-kraft 9092 && \
+        nc -z kafka-v2-infra.kafka-cluster 9092
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
