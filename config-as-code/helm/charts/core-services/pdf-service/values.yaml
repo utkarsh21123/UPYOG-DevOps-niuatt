@@ -21,7 +21,7 @@ initContainers:
     repo: "git@github.com:egovernments/configs"
     branch: "master"
     
-extraInitContainers: |
+  extraInitContainers: |
   - name: kafka-check
     image: busybox:1.36
     command:
@@ -34,7 +34,8 @@ extraInitContainers: |
           echo "Kafka not available, retrying..."
           sleep 5
         done
-        echo "Kafka is available"
+        echo "Kafka is available"  
+  
 
 
 # Container Configs
