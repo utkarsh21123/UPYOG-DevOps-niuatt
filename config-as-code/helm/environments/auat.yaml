@@ -265,7 +265,13 @@ sw-services:
 egov-pg-service:
   axis: true  
   egov-pg-reconciliation-system-user-uuid: "db4fe8ed-c0e0-4c2a-829b-72296d8d156f"
+  
 
+land-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"  
+
+  
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 egov-mdms-service:
   replicas: 1
