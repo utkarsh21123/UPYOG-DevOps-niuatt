@@ -85,7 +85,7 @@ statewide_migration: true
 state_migration: true
 state_schema: state
 multitenancy: true
-db_flyway: false
+db_flyway: true
 
 mail_config: |
   mail.port=465
