@@ -17,6 +17,7 @@ cluster-configs:
                 db-host: assamuat-db.cdsks4i0w0ci.ap-south-1.rds.amazonaws.com:5432 ## Add db-host name eg: upyog-demo.database.azure.com
                 db-name: assamuat ## Add db-name
                 db-url: jdbc:postgresql://assamuat-db.cdsks4i0w0ci.ap-south-1.rds.amazonaws.com:5432/assamuat?sslmode=require ## example: jdbc:postgresql://upyog-demo.postgres.database.azure.com:5432/egov_demo
+                bpa-db-url: jdbc:postgresql://assamuat-db.cdsks4i0w0ci.ap-south-1.rds.amazonaws.com:5432/bpa_db
                 domain: assamuat.niua.in ## Add your Domain Name    
                 egov-services-fqdn-name: https://assamuat.niua.in/ ## Add your Domain Name
                 
