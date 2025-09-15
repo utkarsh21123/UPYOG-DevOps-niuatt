@@ -700,3 +700,25 @@ es-curator:
   jaeger-cleanup-enabled: "true"
   logs-to-retain: "7"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+egov-edcr:
+  ingress:
+    enabled: true
+    zuul: true
+    context: "edcr"
+microservice: |
+  indexer.host=http://egov-indexer.egov:8080/
+  egov.services.egov-indexer.url=egov-indexer/index-operations/{edcr-create-application}/_index
+  edcr.indexer.data.push.required=true
+  ms.url=http://egov-filestore.egov:8080/
+  filestoreservice.beanname=egovMicroServiceStore
+# eGov-eDCR Tenants
+edcrTenants: |
+  common.domain.name=assamuat.niua.in
+  tenant.assamuat.niua.in=state
+  client.id=pg
+  tenant.assam.assamuat.niua.in=assam
+  collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
+
+  
+
