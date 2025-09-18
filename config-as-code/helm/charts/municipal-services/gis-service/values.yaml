@@ -1,0 +1,43 @@
+# Common Labels
+labels:
+  app: "gis-service"
+  group: "rainmaker"
+
+# Ingress Configs
+ingress:
+  enabled: true
+  zuul: true
+  context: "gis-service"
+
+# Init Containers Configs
+initContainers:
+  dbMigration:
+    enabled: true
+    schemaTable: "sv_services_schema"
+    image:
+      repository: "gis-service-db"
+
+# Container Configs
+image:
+  repository: "gis-service"
+replicas: "1"
+healthChecks:
+  enabled: true
+  livenessProbePath: "/gis-service/health"
+  readinessProbePath: "/gis-service/health"
+appType: "java-spring"
+tracing-enabled: true
+heap: "-Xmx384m -Xms256m"
+java-args: "-Dspring.profiles.active=monitoring"
+notification-sms-enabled: ""
+employee-allowed-search-params: ""
+citizen-allowed-search-params: ""
+
+# Additional Container Envs
+env: |
+  - name: EGOV_FILESTORE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore
+
