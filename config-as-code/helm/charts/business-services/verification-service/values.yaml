@@ -100,6 +100,26 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: sw-services
+  - name: MODULE_HOST_WT
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: request-service
+  - name: MODULE_HOST_MT
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: request-service
+  - name: MODULE_HOST_TP
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: tp-services
+  - name: MODULE_HOST_CND
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: cnd-service
   {{- if index .Values "global" "tracer-errors-provideexceptionindetails" }}
   - name: TRACER_ERRORS_PROVIDEEXCEPTIONINDETAILS
     valueFrom:
