@@ -403,6 +403,11 @@ mdms-v2:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
 
+
+gis-service:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
 # docs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 redoc:
   replicas: 1
