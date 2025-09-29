@@ -407,9 +407,7 @@ mdms-v2:
 gis-service:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
-  # Application ports
-  httpPort: 8080          # Main HTTP port
-  healthCheckPort: 8085   # Unique port for health checks
+  
 
 # docs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 redoc:
