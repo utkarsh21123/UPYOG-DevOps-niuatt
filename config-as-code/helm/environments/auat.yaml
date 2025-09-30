@@ -404,9 +404,7 @@ mdms-v2:
   heap: "-Xmx256m -Xms256m"
 
 
-gis-service:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
+
   
 
 # docs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
