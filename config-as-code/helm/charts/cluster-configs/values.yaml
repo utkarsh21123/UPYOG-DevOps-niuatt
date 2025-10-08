@@ -9,7 +9,7 @@ cluster-configs:
     name: root-ingress
     namespace: egov
     cert-issuer: "letsencrypt-staging"
-    appRoot: citizen
+    appRoot: upyog-ui/citizen
     serviceName: citizen
     servicePort: 80
  
