@@ -9,13 +9,13 @@ ingress:
   zuul: true
   context: "gis-service"
 
-# Init Containers Configs
-initContainers:
-  dbMigration:
-    enabled: true
-    schemaTable: "gis_service_schema"
-    image:
-      repository: "gis-service-db"
+# # Init Containers Configs
+# initContainers:
+#   dbMigration:
+#     enabled: true
+#     schemaTable: "gis_service_schema"
+#     image:
+#       repository: "gis-service-db"
 
 # Container Configs
 image:
