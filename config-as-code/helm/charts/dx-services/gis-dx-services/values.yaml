@@ -1,0 +1,67 @@
+# Common Labels
+labels:
+  app: "gis-dx-service"
+  group: "rainmaker"
+
+# Ingress Configs
+ingress:
+  enabled: true
+  zuul: true
+  context: "gis-dx-service"
+
+# Init Containers Configs
+initContainers:
+  dbMigration:
+    enabled: true
+    schemaTable: "gisdx_service_schema"
+    image:
+      repository: "gis-dx-service-db"
+
+# Container Configs
+image:
+  repository: "gis-dx-service"
+replicas: "1"
+healthChecks:
+  enabled: true
+  livenessProbePath: "/gis-dx-service/health"
+  readinessProbePath: "/gis-dx-service/health"
+appType: "java-spring"
+tracing-enabled: true
+heap: "-Xmx384m -Xms256m"
+java-args: "-Dspring.profiles.active=monitoring"
+notification-sms-enabled: ""
+employee-allowed-search-params: ""
+citizen-allowed-search-params: ""
+
+# Additional Container Envs
+env: |
+  - name: EGOV_GIS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: gis-service
+  - name: EGOV_COLLECTION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: gis-service
+  {{- if index .Values "global" "tracer-errors-provideexceptionindetails" }}
+  - name: TRACER_ERRORS_PROVIDEEXCEPTIONINDETAILS
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: tracer-errors-provideexceptionindetails
+  {{- end }}
+  - name: JAVA_ENABLE_DEBUG
+    value: "true"
+  - name: JAVA_OPTS
+    value: {{ index .Values "heap" | quote }}
+  - name: JAVA_ARGS
+    value: {{ index .Values "java-args" | quote }}
+  - name: SERVER_PORT
+    value: "8080"
+  - name: SECURITY_BASIC_ENABLED
+    value: "false"  
+  - name: MANAGEMENT_SECURITY_ENABLED
+    value: "false"
+
