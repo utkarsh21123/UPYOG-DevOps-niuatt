@@ -13,7 +13,7 @@ ingress:
 initContainers:
   dbMigration:
     enabled: true
-    schemaTable: "sv_services_schema"
+    schemaTable: "gis_services_schema"
     image:
       repository: "gis-service-db"
 
