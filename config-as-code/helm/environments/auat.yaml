@@ -6,7 +6,7 @@ global:
 cluster-configs:
     namespaces:  
       create: true
-      values: [ backbone, cert-manager, egov, es-cluster, kafka-cluster, logging, monitoring, playground, zookeeper-cluster ]
+      values: [ backbone, cert-manager, egov, backbone, kafka-cluster, logging, monitoring, playground, zookeeper-cluster ]
       
     root-ingress:
       cert-issuer: letsencrypt-prod
@@ -24,8 +24,8 @@ cluster-configs:
                 
                 egov-state-level-tenant-id: "pg" 
                 s3-assets-bucket: "(pg-egov-assets|egov-playground-assets)"
-                es-host: "elasticsearch-data-v1.es-cluster"
-                es-indexer-host: "http://elasticsearch-data-v1.es-cluster:9200/"
+                es-host: "elasticsearch-data-v1.backbone"
+                es-indexer-host: "http://elasticsearch-data-v1.backbone:9200/"
                 flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
                 kafka-brokers: "release-name-kafka-controller-headless.kafka-kraft:9092"
                 kafka-infra-brokers: kafka-v2-infra.kafka-cluster:9092
@@ -85,7 +85,7 @@ cluster-configs:
                 egov-data-uploader: "http://egov-data-uploader:8080/"
                 egov-indexer: "http://egov-indexer:8080/"
                 egov-hrms: "http://egov-hrms:8080/"
-                es-client: "http://elasticsearch-data-v1.es-cluster:9200"
+                es-client: "http://elasticsearch-data-v1.backbone:9200"
                 hr-masters: "http://hr-masters:8080/"
                 hr-employee: "http://hr-employee:8080/"
                 hr-masters-v2: "http://hr-masters-v2:8080/"
@@ -518,7 +518,7 @@ kafka-config:
   kafka-brokers: "release-name-kafka-controller-headless.kafka-kraft:9092"
 
 logging-config:
-  es-host: "elasticsearch-client-v1.es-cluster"
+  es-host: "elasticsearch-client-v1.backbone"
   es-port: "9200"
 
 jaeger:
@@ -719,7 +719,7 @@ es-curator:
   schedule: "45 18 * * *"
   images:
     - bobrik/curator:5.6.0
-  es-host: "elasticsearch-client-v1.es-cluster"
+  es-host: "elasticsearch-client-v1.backbone"
   logs-cleanup-enabled: "true"
   jaeger-cleanup-enabled: "true"
   logs-to-retain: "7"
