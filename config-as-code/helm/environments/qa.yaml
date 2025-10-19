@@ -563,6 +563,10 @@ egov-apportion-service:
   memory_limits: 512Mi
   heap: -Xmx256m -Xms256m
 
+estate-management:
+  memory_limits: 512Mi
+  heap: "-Xmx384m -Xms256m"
+
 
 # docs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 redoc:
