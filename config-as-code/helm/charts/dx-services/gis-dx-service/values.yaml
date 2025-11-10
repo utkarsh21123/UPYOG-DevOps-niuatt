@@ -44,7 +44,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: gis-service
+        key: collection-services
   {{- if index .Values "global" "tracer-errors-provideexceptionindetails" }}
   - name: TRACER_ERRORS_PROVIDEEXCEPTIONINDETAILS
     valueFrom:
