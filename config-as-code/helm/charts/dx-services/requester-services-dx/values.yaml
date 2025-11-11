@@ -36,4 +36,10 @@ env: |
     value: {{ index .Values "java-args" | quote }}
   - name: JAVA_ENABLE_DEBUG
     value: {{ index .Values "java-debug" | quote }}
+  - name: EPRAMAAN_CLIENTID
+    value: {{ default "" (index .Values "epramaan" "clientId") | quote }}
+  - name: EPRAMAAN_AESKEY
+    value: {{ default "" (index .Values "epramaan" "aesKey") | quote }}
+  - name: EPRAMAAN_CERTIFICATE_VALUE
+    value: {{ default "" (index .Values "epramaan" "certificateValue") | quote }}
  
