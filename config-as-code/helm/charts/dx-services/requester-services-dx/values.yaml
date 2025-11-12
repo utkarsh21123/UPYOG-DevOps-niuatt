@@ -49,3 +49,6 @@ env: |
   - name: EPRAMAAN_CERTIFICATE_VALUE
     value: {{ default "" (index (default dict .Values.epramaan) "certificateValue") | quote }}
 
+extraEnvFrom:
+  - secretRef:
+      name: requester-services-dx-secret
