@@ -41,14 +41,19 @@ env: |
     value: {{ index .Values "java-debug" | quote }}
 
   - name: EPRAMAAN_CLIENTID
-    value: {{ default "" (index (default dict .Values.epramaan) "clientId") | quote }}
+    valueFrom:
+      secretKeyRef:
+        name: requester-services-dx
+        key: epramaan-client-id
 
   - name: EPRAMAAN_AESKEY
-    value: {{ default "" (index (default dict .Values.epramaan) "aesKey") | quote }}
+    valueFrom:
+      secretKeyRef:
+        name: requester-services-dx
+        key: epramaan-aes-key
 
   - name: EPRAMAAN_CERTIFICATE_VALUE
-    value: {{ default "" (index (default dict .Values.epramaan) "certificateValue") | quote }}
-
-extraEnvFrom:
-  - secretRef:
-      name: requester-services-dx-secret
+    valueFrom:
+      secretKeyRef:
+        name: requester-services-dx
+        key: epramaan-certificate-value
