@@ -23,8 +23,8 @@ healthChecks:
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx256m -Xms256m"
-# Added TLS 1.2 enforcement here
-java-args: "-Dspring.profiles.active=monitoring -Dhttps.protocols=TLSv1.2"
+
+java-args: "-Dspring.profiles.active=monitoring"
 java-debug: ""
 
 # Additional Container Envs
@@ -32,8 +32,13 @@ env: |
   - name: SERVER_PORT
     value: "8080"
 
+  # Inject heap + force TLSv1.2 for JVM HTTPS clients (RestTemplate / HttpsURLConnection)
   - name: JAVA_OPTS
-    value: {{ index .Values "heap" | quote }}
+    value: {{ printf "%s -Dhttps.protocols=TLSv1.2 -Djdk.tls.client.protocols=TLSv1.2" (index .Values "heap") | quote }}
+
+  # Also set JAVA_TOOL_OPTIONS so all JVM invocations pick these system properties
+  - name: JAVA_TOOL_OPTIONS
+    value: "-Dhttps.protocols=TLSv1.2 -Djdk.tls.client.protocols=TLSv1.2"
 
   - name: JAVA_ARGS
     value: {{ index .Values "java-args" | quote }}
