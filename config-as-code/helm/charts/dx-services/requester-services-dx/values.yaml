@@ -32,19 +32,17 @@ env: |
   - name: SERVER_PORT
     value: "8080"
 
-  # Inject heap + force TLSv1.2 for JVM HTTPS clients (RestTemplate / HttpsURLConnection)
-  - name: JAVA_OPTS
-    value: {{ printf "%s -Dhttps.protocols=TLSv1.2 -Djdk.tls.client.protocols=TLSv1.2" (index .Values "heap") | quote }}
-
-  # Also set JAVA_TOOL_OPTIONS so all JVM invocations pick these system properties
-  - name: JAVA_TOOL_OPTIONS
-    value: "-Dhttps.protocols=TLSv1.2 -Djdk.tls.client.protocols=TLSv1.2"
-
   - name: JAVA_ARGS
     value: {{ index .Values "java-args" | quote }}
 
   - name: JAVA_ENABLE_DEBUG
     value: {{ index .Values "java-debug" | quote }}
+
+  - name: EGOV_USER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
 
   - name: EPRAMAAN_CLIENTID
     valueFrom:
