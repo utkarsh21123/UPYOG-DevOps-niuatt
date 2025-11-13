@@ -166,7 +166,7 @@ ingress:
   waf: 
     enabled: false
   additionalAnnotations: |
-    nginx.ingress.kubernetes.io/proxy-body-size: 8m
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
   context: "egi"
   
 
