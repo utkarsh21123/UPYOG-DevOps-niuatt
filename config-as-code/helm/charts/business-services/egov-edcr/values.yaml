@@ -56,7 +56,13 @@ env: |
   - name: min-pool-size
     value: {{ index .Values "min-pool-connection" | quote }}
   - name: max-pool-size
-    value: {{ index .Values "max-pool-connection" | quote }}     
+    value: {{ index .Values "max-pool-connection" | quote }}   
+  - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
+    value: "20MB"
+  - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
+    value: "20MB"
+  - name: SERVER_TOMCAT_MAX_SWALLOW_SIZE
+    value: "-1"  
 healthChecks:
   enabled: true
   livenessProbePath: "/"
