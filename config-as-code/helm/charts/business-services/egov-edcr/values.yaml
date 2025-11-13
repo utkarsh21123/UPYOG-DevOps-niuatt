@@ -62,7 +62,10 @@ env: |
   - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
     value: "20MB"
   - name: SERVER_TOMCAT_MAX_SWALLOW_SIZE
-    value: "-1"  
+    value: "-1"
+  - name: JAVA_OPTS
+    value: "-Djboss.http.max-post-size=2147483647 -Djboss.server.max-http-post-size=2147483647 -Djboss.undertow.max-buffer-size=2147483647 -Djboss.undertow.max-cached-size=2147483647 -Dspring.servlet.multipart.max-file-size=20MB -Dspring.servlet.multipart.max-request-size=20MB -Dserver.tomcat.max-swallow-size=-1"
+
 healthChecks:
   enabled: true
   livenessProbePath: "/"
