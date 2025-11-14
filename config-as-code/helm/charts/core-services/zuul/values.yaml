@@ -92,9 +92,9 @@ env: |
   - name: EVENTLOG_URLS_WHITELIST
     value: {{ index .Values "eventlog-whitelist" | quote }}
   - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
-    value: "20MB"
+    value: "10MB"
   - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
-    value: "20MB"
+    value: "10MB"
   - name: SERVER_TOMCAT_MAX_SWALLOW_SIZE
     value: "-1"
   - name: EGOV_AUTHORIZE_ACCESS_CONTROL_HOST

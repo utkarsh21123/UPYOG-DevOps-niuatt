@@ -58,9 +58,9 @@ env: |
   - name: max-pool-size
     value: {{ index .Values "max-pool-connection" | quote }}   
   - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
-    value: "20MB"
+    value: "10MB"
   - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
-    value: "20MB"
+    value: "10MB"
   - name: SERVER_TOMCAT_MAX_SWALLOW_SIZE
     value: "-1"
   - name: JAVA_OPTS
@@ -175,7 +175,7 @@ ingress:
   waf: 
     enabled: false
   additionalAnnotations: |
-    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
   context: "egi"
   
 
