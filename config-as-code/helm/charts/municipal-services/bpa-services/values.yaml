@@ -100,6 +100,16 @@ env: |
         key: egov-workflow-v2
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
+  - name: SUMATO_PROPERTY_SERVICE_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: bpa-services
+        key: sumato-property-service-username
+  - name: SUMATO_PROPERTY_SERVICE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: bpa-services
+        key: sumato-property-service-password
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-bpa-services
   - name: PERSISTER_SAVE_BUILDINGPLAN_TOPIC
