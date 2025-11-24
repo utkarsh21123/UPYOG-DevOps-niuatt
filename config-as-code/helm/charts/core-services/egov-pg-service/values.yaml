@@ -59,9 +59,9 @@ env: |
       secretKeyRef:
         name: egov-pg-service
         key: razorpay-key-id
-   - name: RAZORPAY_KEY_SECRET
-     valueFrom:
-       secretKeyRef:
+  - name: RAZORPAY_KEY_SECRET
+    valueFrom:
+      secretKeyRef:
         name: egov-pg-service
         key: razorpay-key-secret
   - name: EGOV_MDMS_HOST
@@ -207,13 +207,3 @@ env: |
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
   {{- end }}
-   - name: RAZORPAY_KEY_ID
-    valueFrom:
-      secretKeyRef:
-        name: egov-pg-service
-        key: razorpay-key-id
-   - name: RAZORPAY_KEY_SECRET
-    valueFrom:
-      secretKeyRef:
-        name: egov-pg-service
-        key: razorpay-key-secret
