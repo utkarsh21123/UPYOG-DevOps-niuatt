@@ -110,6 +110,11 @@ env: |
       secretKeyRef:
         name: bpa-services
         key: sumato-property-service-password
+  - name: SOFTTHINK_PROPERTY_SERVICE_AUTH_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: bpa-services
+        key: softthink-property-service-auth-token
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-bpa-services
   - name: PERSISTER_SAVE_BUILDINGPLAN_TOPIC
