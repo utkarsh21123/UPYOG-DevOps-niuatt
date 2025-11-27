@@ -404,6 +404,10 @@ egov-apportion-service:
   memory_limits: 512Mi
   heap: -Xmx256m -Xms256m
 
+billing-service:
+  memory_limits: 512Mi
+  heap: -Xmx256m -Xms256m
+
 mdms-v2:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
