@@ -401,8 +401,8 @@ egov-custom-consumer:
   erp-host: "https://mohali-qa.egovernments.org/"
 
 egov-apportion-service:
-  memory_limits: 512Mi
-  heap: -Xmx256m -Xms256m
+  memory_limits: 768Mi
+  heap: -Xmx512m -Xms512m
 
 billing-service:
   memory_limits: 512Mi
