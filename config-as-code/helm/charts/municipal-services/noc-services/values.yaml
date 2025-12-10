@@ -62,7 +62,17 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-workflow-v2 
+        key: egov-workflow-v2
+  - name: EGOV_EDCR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-edcr
+  - name: EGOV_FILESTORE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore      
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
