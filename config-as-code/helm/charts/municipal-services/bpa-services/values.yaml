@@ -110,6 +110,16 @@ env: |
       secretKeyRef:
         name: bpa-services
         key: sumato-property-service-password
+   - name: GMC_PROPERTY_SERVICE_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: bpa-services
+        key: gmc-property-service-username     
+   - name: GMC_PROPERTY_SERVICE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: bpa-services
+        key: bpa-property-service-password     
   - name: SOFTTHINK_PROPERTY_SERVICE_AUTH_TOKEN
     valueFrom:
       secretKeyRef:
