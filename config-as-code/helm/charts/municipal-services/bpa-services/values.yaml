@@ -119,7 +119,7 @@ env: |
     valueFrom:
       secretKeyRef:
         name: bpa-services
-        key: bpa-property-service-password     
+        key: gmc-property-service-password     
   - name: SOFTTHINK_PROPERTY_SERVICE_AUTH_TOKEN
     valueFrom:
       secretKeyRef:
