@@ -459,6 +459,9 @@ collection-services:
   receipt-search-defaultsize: 30
   user-create-enabled: "true"
 
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
 collection-receipt-voucher-consumer:
   jalandhar-erp-host: "https://jalandhar-qa.egovernments.org/"
   mohali-erp-host: "https://mohali-qa.egovernments.org/"
