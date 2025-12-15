@@ -384,7 +384,7 @@ report:
     gitSync:
       repo: "https://github.com/SumatoNudm/upyog-configs"     ##### Change repo url with Your fork Repo url
       branch: "master"                                   ##### Change repo branch with Your fork Repo branch
-  report-locationsfile-path: "file:///work-dir/configs/reports/reportFileLocationsv1.txt"
+  report-locationsfile-path: "file:///work-dir/upyog-configs/configs/reports/reportFileLocationsv1.txt"
 
 pdf-service:
   initContainers:
