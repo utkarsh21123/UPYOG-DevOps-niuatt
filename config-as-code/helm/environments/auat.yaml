@@ -289,6 +289,10 @@ land-services:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"  
 
+noc-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"   
+
 gis-service:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
