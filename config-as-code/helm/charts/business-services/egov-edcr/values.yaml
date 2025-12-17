@@ -58,13 +58,13 @@ env: |
   - name: max-pool-size
     value: {{ index .Values "max-pool-connection" | quote }}   
   - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
-    value: "10MB"
+    value: "30MB"
   - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
-    value: "10MB"
+    value: "30MB"
   - name: SERVER_TOMCAT_MAX_SWALLOW_SIZE
     value: "-1"
   - name: JAVA_OPTS
-    value: "-Djboss.http.max-post-size=2147483647 -Djboss.server.max-http-post-size=2147483647 -Djboss.undertow.max-buffer-size=2147483647 -Djboss.undertow.max-cached-size=2147483647 -Dspring.servlet.multipart.max-file-size=20MB -Dspring.servlet.multipart.max-request-size=20MB -Dserver.tomcat.max-swallow-size=-1"
+    value: "-Djboss.http.max-post-size=2147483647 -Djboss.server.max-http-post-size=2147483647 -Djboss.undertow.max-buffer-size=2147483647 -Djboss.undertow.max-cached-size=2147483647 -Dspring.servlet.multipart.max-file-size=30MB -Dspring.servlet.multipart.max-request-size=30MB -Dserver.tomcat.max-swallow-size=-1"
 
 healthChecks:
   enabled: true
@@ -175,7 +175,7 @@ ingress:
   waf: 
     enabled: false
   additionalAnnotations: |
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    nginx.ingress.kubernetes.io/proxy-body-size: 30m
   context: "egi"
   
 
