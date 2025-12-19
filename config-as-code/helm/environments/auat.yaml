@@ -203,10 +203,12 @@ egov-notification-sms:
   sms-provider-url: "https://sms.amtronindia.in/form_/send_api_master_get.php" ## Add sms provider url
   sms.provider.class: "AMTRON"
   sms.provider.contentType:  "application/x-www-form-urlencoded"
-  sms-config-map: "{'User':'$username', 'passwd': '$password', 'sid':'$senderid', 'mobilenumber':'$mobileno', 'message':'$message', 'mtype':'N', 'DR':'N', 'smsservicetype':'singlemsg'}"
+  sms-config-map: "{'agency':'NIC','password':'$password', 'district':'ALL','app_id':'OBPAS', 'sender_id':'$senderid', 'unicode':'false', 'to':'$mobileno', 'te_id':'$templateid', 'msg':'$message'}"
   sms-gateway-to-use: "sms provider name" ## Add sms provider name
-  sms-senderid: "ASMGOV" ## Add sms sender
+  sms.senderid: "ASMGOV" ## Add sms sender
   sms-sender-requesttype: "GET"
+  sms.provider.requestType: "GET"
+  sms.verify.responseContains: "SUBMIT_ACCEPTED"
   sms-custom-config: "true"
   sms-extra-req-params: "mtype=N&DR=Y"
   sms-sender-req-param-name: "sid"
