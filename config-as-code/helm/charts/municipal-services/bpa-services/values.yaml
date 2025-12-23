@@ -100,6 +100,8 @@ env: |
         key: egov-workflow-v2
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
+  - name: SUMATO_PROPERTY_SERVICE_URL
+    value: "https://service.assamurban.in/api/v1"
   - name: SUMATO_PROPERTY_SERVICE_USERNAME
     valueFrom:
       secretKeyRef:
@@ -110,6 +112,8 @@ env: |
       secretKeyRef:
         name: bpa-services
         key: sumato-property-service-password
+  - name: GMC_PROPERTY_SERVICE_URL
+    value: "https://gmcpropertytax.com"
   - name: GMC_PROPERTY_SERVICE_USERNAME
     valueFrom:
       secretKeyRef:
@@ -119,7 +123,11 @@ env: |
     valueFrom:
       secretKeyRef:
         name: bpa-services
-        key: gmc-property-service-password     
+        key: gmc-property-service-password   
+  - name: SOFTTHINK_PROPERTY_SERVICE_URL
+    value: "https://online.softthink.co.in"
+  - name : SOFTTHINK_PROPERTY_SERVICE_ENDPOINT
+    value: "/SCMBAPI/API/Holding/FetchHoldingDetails"  
   - name: SOFTTHINK_PROPERTY_SERVICE_AUTH_TOKEN
     valueFrom:
       secretKeyRef:
