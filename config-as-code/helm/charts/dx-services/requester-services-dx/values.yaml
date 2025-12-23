@@ -63,7 +63,7 @@ env: |
         key: epramaan-certificate-value
 
   - name: EPRAMAAN_REDIRECTURI
-    value: "https://obpas.assam.gov.in/upyog-ui/citizen"
+    value: "https://assamuat.niua.in/upyog-ui/citizen"
 
   - name: EPRAMAAN_SERVICELOGOUTURI
-    value: "https://obpas.assam.gov.in/upyog-ui/citizen"
+    value: "https://assamuat.niua.in/upyog-ui/citizen"
