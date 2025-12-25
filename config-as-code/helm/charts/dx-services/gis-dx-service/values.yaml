@@ -46,6 +46,11 @@ env: |
         name: egov-service-host
         key: collection-services
   {{- if index .Values "global" "tracer-errors-provideexceptionindetails" }}
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
   - name: TRACER_ERRORS_PROVIDEEXCEPTIONINDETAILS
     valueFrom:
       configMapKeyRef:
