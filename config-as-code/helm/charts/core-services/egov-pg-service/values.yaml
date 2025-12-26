@@ -206,4 +206,12 @@ env: |
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
+  - name: RAZORPAY_URL_ORDER
+    value: "https://api.razorpay.com/v1/orders"
+  - name: RAZORPAY_URL_PAYMENT
+    value: "https://api.razorpay.com/v1/payments"
+  - name: RAZORPAY_URL_CHECKOUT
+    value: "https://api.razorpay.com/v1/checkout/embedded"
+  - name: RAZORPAY_REDIRECT_URL
+    value: "https://obpas.assam.gov.in/pg-service/transaction/v1/_redirect"
   {{- end }}
