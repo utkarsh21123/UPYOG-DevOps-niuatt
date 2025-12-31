@@ -389,8 +389,8 @@ report:
   report-locationsfile-path: "file:///work-dir/upyog-configs/configs/reports/reportFileLocationsv1.txt"
 
 pdf-service:
-  heap: "-Xmx512m -Xms512m"
-  tracing-enabled: "true"
+  memory_limits: 768Mi
+  heap: -Xmx512m -Xms512m
   initContainers:
     gitSync:
       repo: "https://github.com/SumatoNudm/upyog-configs"     ##### Change repo url with Your fork Repo url
