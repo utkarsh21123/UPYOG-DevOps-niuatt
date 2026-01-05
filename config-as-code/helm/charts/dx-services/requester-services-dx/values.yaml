@@ -67,3 +67,12 @@ env: |
 
   - name: EPRAMAAN_SERVICELOGOUTURI
     value: "https://assamuat.niua.in/upyog-ui/citizen"
+
+  - name: EPRAMAAN_AUTHGRANTREQUESTURI
+    value: "https://epstg.meripehchaan.gov.in/openid/jwt/processJwtAuthGrantRequest.do"
+
+  - name: EPRAMAAN_TOKENREQUESTURI
+    value: "https://epstg.meripehchaan.gov.in/openid/jwt/processJwtTokenRequest.do"
+
+  - name: EPRAMAAN_LOGOUTURI
+    value: "https://epstg.meripehchaan.gov.in/openid/jwt/processOIDCSLORequest.do"
