@@ -488,8 +488,8 @@ property-services:
   heap: "-Xmx256m -Xms256m"
 
 pet-services:
-  memory_limits: 256Mi
-  heap: "-Xmx128m -Xms128m"
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
 
 ewaste-services:
   memory_limits: 512Mi
