@@ -528,8 +528,8 @@ request-service:
   heap: "-Xmx256m -Xms256m"
   
 cnd-service:
-  memory_limits: 256Mi
-  heap: "-Xmx128m -Xms128m"  
+  memory_limits: 512Mi
+  heap: "-Xmx384m -Xms256m" 
 
 tp-services:
   memory_limits: 512Mi
