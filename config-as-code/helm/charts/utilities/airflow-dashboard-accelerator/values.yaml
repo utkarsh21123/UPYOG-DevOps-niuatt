@@ -10,7 +10,7 @@ dags:
     repo: "git@github.com:niua-org/UPYOG-NIUA.git"
     branch: "niua-dev-2.0"
     subPath: "utilities/egov-national-dashboard-accelerator/dags"
-    sshKeySecret: "airflow-ssh-secret"
+    sshKeySecret: "git-creds"
 
 plugins:
   gitSync:
@@ -18,9 +18,12 @@ plugins:
     repo: "git@github.com:niua-org/UPYOG-NIUA.git"
     branch: "niua-dev-2.0"
     subPath: "utilities/egov-national-dashboard-accelerator/plugins"
-    sshKeySecret: "airflow-ssh-secret"
+    sshKeySecret: "git-creds"
 
 postgresql:
   enabled: true
+  image:
+    repository: postgres
+    tag: "15" 
 
 
