@@ -1,7 +1,7 @@
-## Airflow values for National Dashboard Accelerator DAGs and plugins
-##
-# DAGs are synced from the UPYOG-NIUA repo where
-# utilities/egov-national-dashboard-accelerator/dags contains the DAG code.
+## Airflow values for National Dashboard Accelerator
+## Domain: https://niuatt.niua.in/
+
+# 1. DAGs and Plugins Configuration
 dags:
   persistence:
     enabled: false
@@ -11,6 +11,7 @@ dags:
     branch: "niua-dev-2.0"
     subPath: "utilities/egov-national-dashboard-accelerator/dags"
     sshKeySecret: "git-creds"
+    sshKeyFilename: "ssh"  
 
 plugins:
   gitSync:
@@ -19,11 +20,31 @@ plugins:
     branch: "niua-dev-2.0"
     subPath: "utilities/egov-national-dashboard-accelerator/plugins"
     sshKeySecret: "git-creds"
+    sshKeyFilename: "ssh"  
 
+# 2. Webserver & Ingress Configuration
+webserver:
+  enabled: true
+  service:
+    type: ClusterIP
+
+ingress:
+  enabled: true
+  context: "airflow"
+  additionalAnnotations: |
+    nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
+    nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
+
+# 3. Component Configuration
+dagProcessor:
+  enabled: true
+
+scheduler:
+  replicas: 1
+
+# 4. Database Configuration
 postgresql:
   enabled: true
   image:
     repository: postgres
-    tag: "15" 
-
-
+    tag: "15"
