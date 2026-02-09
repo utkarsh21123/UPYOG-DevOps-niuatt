@@ -11,6 +11,7 @@ dags:
     branch: "niua-dev-2.0"
     subPath: "utilities/egov-national-dashboard-accelerator/dags"
     sshKeySecret: "git-creds"
+    # No sshKeyFilename here to avoid the schema error
 
 plugins:
   gitSync:
@@ -27,11 +28,14 @@ webserver:
     type: ClusterIP
 
 ingress:
-  enabled: true
-  context: "airflow"
-  additionalAnnotations: |
-    nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
-    nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
+  web:
+    enabled: true
+    hosts: 
+      - name: "niuatt.niua.in"
+    path: "/airflow"
+    annotations:
+      nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+      nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
 
 # 3. Component Configuration
 dagProcessor:
