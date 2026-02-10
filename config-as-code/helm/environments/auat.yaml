@@ -149,6 +149,7 @@ cluster-configs:
                 mdms-v2: http://mdms-v2.egov:8080/
                 gis-service: "http://gis-service:8080/"
                 requester-services-dx: "http://requester-services-dx:8080/"
+                verification-service: "http://verification-service:8080/"
 
 employee:
   dashboard-url: "https://dashboard-pbuat.egovernments.org/s/w---s/app/kibana#/dashboard/4e687470-f3c7-11e8-8d09-b151e2b1cf8e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A300000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))"
@@ -296,6 +297,10 @@ noc-services:
   heap: "-Xmx256m -Xms256m"   
 
 gis-service:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+verification-service:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
   
