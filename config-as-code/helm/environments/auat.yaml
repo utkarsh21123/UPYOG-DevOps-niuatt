@@ -312,39 +312,6 @@ verification-service:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
 
-adv-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
-
-sv-services:
-  memory_limits: 1024Mi
-  heap: "-Xmx512m -Xms512m"
-
-pet-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
-
-ewaste-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
-
-chb-services:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
-
-request-service:
-  memory_limits: 512Mi
-  heap: "-Xmx256m -Xms256m"
-
-cnd-service:
-  memory_limits: 512Mi
-  heap: "-Xmx384m -Xms256m" 
-
-cnd-calculator:
-  memory_limits: 256Mi
-  heap: "-Xmx128m -Xms128m" 
-
-
   
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 egov-mdms-service:
