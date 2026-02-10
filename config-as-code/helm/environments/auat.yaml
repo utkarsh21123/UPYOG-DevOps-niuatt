@@ -150,6 +150,14 @@ cluster-configs:
                 gis-service: "http://gis-service:8080/"
                 requester-services-dx: "http://requester-services-dx:8080/"
                 verification-service: "http://verification-service:8080/"
+                adv-services: "http://adv-services:8080/"
+                sv-services: "http://sv-services:8080/"
+                pet-services: "http://pet-services:8080/"
+                ewaste-services: "http://ewaste-services:8080/"
+                chb-services: "http://chb-services:8080/"
+                request-service: "http://request-service:8080/"
+                cnd-service: "http://cnd-service:8080/"
+                cnd-calculator: "http://cnd-calculator:8080/"
 
 employee:
   dashboard-url: "https://dashboard-pbuat.egovernments.org/s/w---s/app/kibana#/dashboard/4e687470-f3c7-11e8-8d09-b151e2b1cf8e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A300000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))"
@@ -303,6 +311,40 @@ gis-service:
 verification-service:
   memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"
+
+adv-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+sv-services:
+  memory_limits: 1024Mi
+  heap: "-Xmx512m -Xms512m"
+
+pet-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+ewaste-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+chb-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+request-service:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+cnd-service:
+  memory_limits: 512Mi
+  heap: "-Xmx384m -Xms256m" 
+
+cnd-calculator:
+  memory_limits: 256Mi
+  heap: "-Xmx128m -Xms128m" 
+
+
   
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 egov-mdms-service:
