@@ -1,7 +1,13 @@
 ## Airflow values for National Dashboard Accelerator
 ## Domain: https://niuatt.niua.in/
 
-# 1. DAGs and Plugins Configuration
+# 1. Core Configuration
+# This is required so the UI knows it lives at the /airflow subpath
+config:
+  webserver:
+    base_url: "https://niuatt.niua.in/airflow"
+
+# 2. DAGs and Plugins Configuration
 dags:
   persistence:
     enabled: false
@@ -11,7 +17,6 @@ dags:
     branch: "niua-dev-2.0"
     subPath: "utilities/egov-national-dashboard-accelerator/dags"
     sshKeySecret: "git-creds"
-    # No sshKeyFilename here to avoid the schema error
 
 plugins:
   gitSync:
@@ -21,7 +26,7 @@ plugins:
     subPath: "utilities/egov-national-dashboard-accelerator/plugins"
     sshKeySecret: "git-creds"
 
-# 2. Webserver & Ingress Configuration
+# 3. Webserver & Ingress Configuration
 webserver:
   enabled: true
   service:
@@ -30,21 +35,23 @@ webserver:
 ingress:
   web:
     enabled: true
-    hosts: 
-      - name: "niuatt.niua.in"
     path: "/airflow"
+    pathType: Prefix
+    hosts:
+      - name: "niuatt.niua.in"
     annotations:
       nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
       nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+      nginx.ingress.kubernetes.io/use-regex: "true"
 
-# 3. Component Configuration
+# 4. Component Configuration
 dagProcessor:
   enabled: true
 
 scheduler:
   replicas: 1
 
-# 4. Database Configuration
+# 5. Database Configuration
 postgresql:
   enabled: true
   image:
