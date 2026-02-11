@@ -120,7 +120,7 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: cnd-service
-   - name: REPORT_SERVICE_HOST
+  - name: REPORT_SERVICE_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
