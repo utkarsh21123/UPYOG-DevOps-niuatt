@@ -421,7 +421,8 @@ dashboard-ingest:
   initContainers:
     gitSync:
       repo: "git@github.com:niua-org/upyog-configs"      ##### Change repo url with Your fork Repo url
-      branch: "niua-dev-2.0"                                    ##### Change repo branch with Your fork Repo branch
+      branch: "niua-dev-2.0"        
+  es-push-direct: true                            ##### Change repo branch with Your fork Repo branch
 
 # reportinfra >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
