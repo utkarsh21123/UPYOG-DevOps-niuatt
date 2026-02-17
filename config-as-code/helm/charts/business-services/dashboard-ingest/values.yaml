@@ -60,7 +60,9 @@ env: |
   - name: ES_DOCUMENT_TYPE
     value: "pipeline_data"
   - name: ES_HOST_SCHEMA
-    value: "https"
+    value: "http"
+  - name: ES_INDEX_TYPE
+    value: "_doc"
   - name: ES_INDEX_SEARCHQUERY_COLLECTION
     value: "{\"size\": \"10\",\"query\":{\"bool\":{\"must\":[{\"wildcard\": {\"Data.tenantId.keyword\":\"pb.*\"}}]}}}"
   - name: ES_INDEX_SEARCHQUERY_BILLING
