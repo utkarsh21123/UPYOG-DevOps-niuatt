@@ -6,7 +6,7 @@
 
 config:
   AIRFLOW__WEBSERVER__BASE_URL: https://niuatt.niua.in/airflow
-
+  AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX: "True"
 # 2. DAGs and Plugins Configuration
 dags:
   persistence:
