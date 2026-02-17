@@ -39,6 +39,16 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: es-indexer-host
+  - name: SERVICES_ESINDEXER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+  - name: SERVICES_ESINDEXER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
   - name: SERVICES_ESINDEXER_HOST_PORT
     value: "9200"
   - name: ES_TARGET_INDEX_NAME
