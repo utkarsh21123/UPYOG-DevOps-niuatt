@@ -966,10 +966,10 @@ es-curator:
 
 # eGov-finance Tenants
 # commenting tenants for user login based schema mapping
-#tenant.citya-niuatt.niua.in=citya
-  #tenant.cityb-niuatt.niua.in=cityb
-  #tenant.cityc-niuatt.niua.in=cityc
-  #tenant.niuatt.niua.in=state
+# tenant.citya-niuatt.niua.in=citya
+# tenant.cityb-niuatt.niua.in=cityb
+# tenant.cityc-niuatt.niua.in=cityc
+# tenant.niuatt.niua.in=state
 financeTenants: |
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
