@@ -14,12 +14,12 @@ cluster-configs:
         egov-config:
             namespace: [ egov, monitoring ]
             data:
-                db-host: ec2-13-200-166-81.ap-south-1.compute.amazonaws.com:5432 ## Add db-host name eg: upyog-demo.database.azure.com
+                db-host: ec2-13-203-111-246.ap-south-1.compute.amazonaws.com:5432 ## Add db-host name eg: upyog-demo.database.azure.com
                 db-name: niuatt ## Add db-name
-                db-url: jdbc:postgresql://ec2-13-200-166-81.ap-south-1.compute.amazonaws.com:5432/niuatt
-                bpa-db-url: jdbc:postgresql://ec2-13-200-166-81.ap-south-1.compute.amazonaws.com:5432/bpa_db
+                db-url: jdbc:postgresql://ec2-13-203-111-246.ap-south-1.compute.amazonaws.com:5432/niuatt
+                bpa-db-url: jdbc:postgresql://ec2-13-203-111-246.ap-south-1.compute.amazonaws.com:5432/bpa_db
                 #bpa-db-url: jdbc:postgresql://niuatt-db.cvow82wmyh87.ap-south-1.rds.amazonaws.com:5432/bpa_db
-                erp-db-url: jdbc:postgresql://ec2-13-200-166-81.ap-south-1.compute.amazonaws.com:5432/finance-niuatt-uat
+                erp-db-url: jdbc:postgresql://ec2-13-203-111-246.ap-south-1.compute.amazonaws.com:5432/finance-niuatt-uat
                 domain: niuatt.niua.in ## Add your Domain Name    
                 egov-services-fqdn-name: https://niuatt.niua.in/ ## Add your Domain Name
                 
