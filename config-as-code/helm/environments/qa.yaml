@@ -134,7 +134,7 @@ cluster-configs:
                 noc-services: "http://noc-services.egov:8080/"
                 minio-url: "https://minio-uat.upyog.org/"
                 egov-user-chatbot: "http://egov-user-chatbot:8080/"
-                zuul: "http://zuul:8080/"
+                gateway: "http://gateway:8080/"
                 egov-url-shortening: "http://egov-url-shortening:8080/"
                 fsm-calculator: "http://fsm-calculator.egov:8080/"
                 fsm: "http://fsm.egov:8080/"
@@ -644,7 +644,7 @@ cert-manager:
   email: "sahmed@niua.org"     ### Add email-id which used by cert-manager for certificates validation.
   
   
-zuul:
+gateway:
   replicas: 1
   custom-filter-property: "false"
   tracing-enabled: "true"
@@ -1005,7 +1005,7 @@ egov-finance:
 egov-edcr:
   ingress:
     enabled: true
-    zuul: true
+    gateway: true
     context: "edcr"
 microservice: |
   indexer.host=http://egov-indexer.egov:8080/
