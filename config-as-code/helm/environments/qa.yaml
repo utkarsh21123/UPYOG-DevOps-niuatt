@@ -965,10 +965,12 @@ es-curator:
 
 
 # eGov-finance Tenants
+# tenant.citya-niuatt.niua.in=citya
+# tenant.cityb-niuatt.niua.in=cityb
+# tenant.cityc-niuatt.niua.in=cityc
+
 financeTenants: |
-  tenant.citya-niuatt.niua.in=citya
-  tenant.cityb-niuatt.niua.in=cityb
-  tenant.cityc-niuatt.niua.in=cityc
+  tenant.schemas=citya,cityb,cityc
   tenant.niuatt.niua.in=state
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
