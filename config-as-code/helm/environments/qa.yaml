@@ -965,9 +965,13 @@ es-curator:
 
 
 # eGov-finance Tenants
+# Earlier approach: host-based tenant mapping for each city and for DB Migration startup
 # tenant.citya-niuatt.niua.in=citya
 # tenant.cityb-niuatt.niua.in=cityb
 # tenant.cityc-niuatt.niua.in=cityc
+
+# New approach: explicit schema list used for DB Migration startup
+# tenant.schemas=citya,cityb,cityc
 
 financeTenants: |
   tenant.schemas=citya,cityb,cityc
