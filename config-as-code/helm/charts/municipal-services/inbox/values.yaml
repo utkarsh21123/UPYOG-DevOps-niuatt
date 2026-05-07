@@ -1,4 +1,4 @@
-namespace : sanitation
+#namespace : sanitation
 # Common Labels
 labels:
   app: "inbox"
@@ -20,7 +20,7 @@ healthChecks:
   readinessProbePath: "/inbox/health"
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx384m -Xms256m"
+heap: "-Xmx256m -Xms256m"
 java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
@@ -30,6 +30,59 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-workflow-v2
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
+  - name: EGOV_USER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
+  - name: EGOV_SEARCHER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-searcher
+  - name: SERVICES_ESINDEXER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: es-indexer-host
+  - name: SERVICES_ESINDEXER_HOST_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: es-indexer-host  
+  - name: SERVICES_ESINDEXER_HOST_PORT
+    value: "9200"  
+  - name: ES_INDEX_NAME
+    value: "transaction"
+  - name: SERVICES_ESINDEXER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: SERVICES_ESINDEXER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+  - name: EGOV_ES_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: EGOV_ES_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+  - name: ES_DOCUMENT_TYPE
+    value: "transaction"
+  - name: EGOV_SERVICES_ESINDEXER_HOST_SEARCH
+    value: "/_search"           
   - name: WORKFLOW_PROCESS_SEARCH_PATH
     value: "egov-workflow-v2/egov-wf/process/_search"
   - name: WORKFLOW_BUSINESSSERVICE_SEARCH_PATH

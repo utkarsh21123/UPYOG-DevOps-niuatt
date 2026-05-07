@@ -1,0 +1,78 @@
+
+labels:
+  app: "requester-services-dx"
+  group: "dx"
+
+# Ingress Configs
+ingress:
+  enabled: true
+  zuul: true
+  context: "requester-services-dx"
+
+# Init Containers Configs
+initContainers: {}
+
+# Container Configs
+image:
+  repository: "requester-services-dx"
+replicas: "1"
+healthChecks:
+  enabled: true
+  livenessProbePath: "/requester-services-dx/health"
+  readinessProbePath: "/requester-services-dx/health"
+appType: "java-spring"
+tracing-enabled: true
+heap: "-Xmx256m -Xms256m"
+
+java-args: "-Dspring.profiles.active=monitoring"
+java-debug: ""
+
+# Additional Container Envs
+env: |
+  - name: SERVER_PORT
+    value: "8080"
+
+  - name: JAVA_ARGS
+    value: {{ index .Values "java-args" | quote }}
+
+  - name: JAVA_ENABLE_DEBUG
+    value: {{ index .Values "java-debug" | quote }}
+
+  - name: EGOV_USER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
+
+  - name: EPRAMAAN_CLIENTID
+    valueFrom:
+      secretKeyRef:
+        name: requester-services-dx
+        key: epramaan-client-id
+
+  - name: EPRAMAAN_AESKEY
+    valueFrom:
+      secretKeyRef:
+        name: requester-services-dx
+        key: epramaan-aes-key
+
+  - name: EPRAMAAN_CERTIFICATE_VALUE
+    valueFrom:
+      secretKeyRef:
+        name: requester-services-dx
+        key: epramaan-certificate-value
+
+  - name: EPRAMAAN_REDIRECTURI
+    value: "https://assamuat.niua.in/upyog-ui/citizen"
+
+  - name: EPRAMAAN_SERVICELOGOUTURI
+    value: "https://assamuat.niua.in/upyog-ui/citizen"
+
+  - name: EPRAMAAN_AUTHGRANTREQUESTURI
+    value: "https://epstg.meripehchaan.gov.in/openid/jwt/processJwtAuthGrantRequest.do"
+
+  - name: EPRAMAAN_TOKENREQUESTURI
+    value: "https://epstg.meripehchaan.gov.in/openid/jwt/processJwtTokenRequest.do"
+
+  - name: EPRAMAAN_LOGOUTURI
+    value: "https://epstg.meripehchaan.gov.in/openid/jwt/processOIDCSLORequest.do"

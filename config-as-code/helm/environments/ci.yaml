@@ -28,19 +28,17 @@ jenkins:
       user:                                 # Add github team. Members of this team gets login access on jenkins
         - niua-org*nudmteam-ci
         - niua-org*nudmteam-qa
-        - niua-org*nudmteam-uat
+       
        
 
   jobBuilder:    # Add jobBuilder repo's, add repo's ssh link
     repos: >-
-      'https://github.com/niua-org/UPYOG-NIUA.git'
+      'https://github.com/niua-org/UPYOG-NIUA.git','https://github.com/niua-org/UPYOG-TEMP.git', 'https://github.com/niua-org/upyog-assam.git'
   deploymentJobs:  # Setup deploymentJobs ACL 
     - name: ci    # deployment job name
       acl: [niua-org*nudmteam-ci] # GitHub team name, Members of the team get access to deployment job
     - name: qa
       acl: [niua-org*nudmteam-qa] 
-    - name: uat
-      acl: [niua-org*nudmteam-uat] 
     
        
   master:

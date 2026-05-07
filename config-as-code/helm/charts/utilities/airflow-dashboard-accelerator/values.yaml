@@ -1,0 +1,59 @@
+## Airflow values for National Dashboard Accelerator
+## Domain: https://niuatt.niua.in/
+
+# 1. Core Configuration
+# This is required so the UI knows it lives at the /airflow subpath
+
+config:
+  AIRFLOW__WEBSERVER__BASE_URL: https://niuatt.niua.in/airflow
+  AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX: "True"
+# 2. DAGs and Plugins Configuration
+dags:
+  persistence:
+    enabled: false
+  gitSync:
+    enabled: true
+    repo: "git@github.com:niua-org/UPYOG-NIUA.git"
+    branch: "niua-dev-2.0"
+    subPath: "utilities/egov-national-dashboard-accelerator/dags"
+    sshKeySecret: "git-creds"
+
+plugins:
+  gitSync:
+    enabled: true
+    repo: "git@github.com:niua-org/UPYOG-NIUA.git"
+    branch: "niua-dev-2.0"
+    subPath: "utilities/egov-national-dashboard-accelerator/plugins"
+    sshKeySecret: "git-creds"
+
+# 3. Webserver & Ingress Configuration
+webserver:
+  enabled: true
+  service:
+    type: ClusterIP
+
+ingress:
+  web:
+    enabled: true
+    path: "/airflow"
+    pathType: Prefix
+    hosts:
+      - name: "niuatt.niua.in"
+    annotations:
+      nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+      nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+      nginx.ingress.kubernetes.io/use-regex: "true"
+
+# 4. Component Configuration
+dagProcessor:
+  enabled: true
+
+scheduler:
+  replicas: 1
+
+# 5. Database Configuration
+postgresql:
+  enabled: true
+  image:
+    repository: postgres
+    tag: "15"

@@ -17,10 +17,10 @@ initContainers: {}
 # Container Configs
 image:
   repository: "docker.elastic.co/kibana/kibana"
-  tag: 6.6.2
+  tag: 8.11.3
 replicas: "1"
 httpPort: 5601
-elasticsearchHosts: "http://elasticsearch-data-v1.es-cluster:9200"
+elasticsearchHosts: "http://elasticsearch-data.es-cluster:9200"
 serverBasePath: "/kibana"
 healthCheckPath: "kibana/app/kibana"
 healthChecks:

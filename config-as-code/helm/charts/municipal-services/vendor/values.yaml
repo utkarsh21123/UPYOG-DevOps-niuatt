@@ -1,4 +1,4 @@
-namespace : sanitation
+#namespace : sanitation
 # Common Labels
 labels:
   app: "vendor"

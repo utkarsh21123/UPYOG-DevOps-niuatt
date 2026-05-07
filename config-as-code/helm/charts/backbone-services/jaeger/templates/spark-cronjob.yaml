@@ -1,6 +1,6 @@
 {{- if .Values.spark.enabled -}}
-apiVersion: batch/v1beta1
-kind: CronJob
+apiVersion: jaegertracing.io/v1
+kind: Jaegermetadata
 metadata:
   name: {{ template "name" . }}-spark
   namespace: {{ .Values.namespace }}

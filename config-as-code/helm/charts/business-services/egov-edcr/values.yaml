@@ -52,51 +52,20 @@ env: |
     valueFrom: 
       secretKeyRef: 
         name: db
-        key: password
-  - name: mail-sender-password
-    valueFrom: 
-      secretKeyRef: 
-        name: egov-edcr-notification
-        key: mailsenderpassword
-  - name: mail-sender-username
-    valueFrom: 
-      secretKeyRef: 
-        name: egov-edcr-notification
-        key: mailsenderusername     
-  - name: sms-username
-    valueFrom:
-      secretKeyRef:  
-        name: egov-edcr-notification
-        key: smssenderusername
-  - name: sms-password
-    valueFrom:
-      secretKeyRef:  
-        name: egov-edcr-notification
-        key: smssenderpassword     
-  - name: pnb-mid
-    valueFrom:
-      secretKeyRef:  
-        name: egov-edcr-bank-gateway
-        key: pnbmid
-  - name: pnb-encryption-key
-    valueFrom:
-      secretKeyRef:  
-        name: egov-edcr-bank-gateway
-        key: pnbencryptionkey
-  - name: hdfc-key
-    valueFrom:
-      secretKeyRef:  
-        name: egov-edcr-bank-gateway
-        key: hdfckey
-  - name: hdfc-salt
-    valueFrom:
-      secretKeyRef:  
-        name: egov-edcr-bank-gateway
-        key: hdfcsalt
+        key: password  
   - name: min-pool-size
     value: {{ index .Values "min-pool-connection" | quote }}
   - name: max-pool-size
-    value: {{ index .Values "max-pool-connection" | quote }}     
+    value: {{ index .Values "max-pool-connection" | quote }}   
+  - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
+    value: "30MB"
+  - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
+    value: "30MB"
+  - name: SERVER_TOMCAT_MAX_SWALLOW_SIZE
+    value: "-1"
+  - name: JAVA_OPTS
+    value: "-Djboss.http.max-post-size=2147483647 -Djboss.server.max-http-post-size=2147483647 -Djboss.undertow.max-buffer-size=2147483647 -Djboss.undertow.max-cached-size=2147483647 -Dspring.servlet.multipart.max-file-size=30MB -Dspring.servlet.multipart.max-request-size=30MB -Dserver.tomcat.max-swallow-size=-1"
+
 healthChecks:
   enabled: true
   livenessProbePath: "/"
@@ -174,7 +143,7 @@ tenants: |
   #tenant.egov-dcr-mercury.egovernments.org=mercury
   #tenant.egov-dcr-jupiter.egovernments.org=jupiter
   tenant.egov-micro-dev.egovernments.org=state
-  client.id=punjab
+  client.id=niuatt
   #tenant.bihar-micro-dev.egovernments.org=state
   #tenant.biharsharif.bihar-micro-dev.egovernments.org=biharsharif
   #tenant.muzaffarpur.bihar-micro-dev.egovernments.org=muzaffarpur
@@ -184,8 +153,9 @@ tenants: |
   #tenant.katihar.bihar-micro-dev.egovernments.org=katihar
   #tenant.bhagalpur.bihar-micro-dev.egovernments.org=bhagalpur
   #tenant.sonpur.bihar-micro-dev.egovernments.org=sonpur 
-  tenant.amritsar-egov-micro-dev.egovernments.org=amritsar
-  tenant.jalandhar-egov-micro-dev.egovernments.org=jalandhar
+  tenant.citya-egov-micro-dev.egovernments.org=citya
+  #tenant.amritsar-egov-micro-dev.egovernments.org=amritsar
+  #tenant.jalandhar-egov-micro-dev.egovernments.org=jalandhar
   #location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
@@ -195,27 +165,8 @@ microservice: |
   mdms.enable=true
   mdms.host=http://egov-mdms-service.egov:8080/
   mdms.searchurl=egov-mdms-service/v1/_search
+  mdms.searchurlv2=/mdms-v2/v1/_search
 
-payment_gatway_credential: |
-  pnb.mid=${pnb-mid}
-  pnb.encryption.key=${pnb-encryption-key}
-  pnb.reconcile.url=https://cgt.in.worldline.com/ipg/getTransactionStatus
-  pnb.transaction.currency=INR
-  pnb.transaction.request.type=S
-  pnb.transactionmessage=(visa/master(credit/debit)cards)
-
-hdfc_payment_gatway_credential: |
-  hdfc.key=${hdfc-key}
-  hdfc.salt=${hdfc-salt}
-  hdfc.pg=CC
-  hdfc.reconcile.url=https://test.payu.in/merchant/postservice.php?form=2
-  hdfc.reconcile.command=verify_payment
-  hdfc.transaction.currency=INR
-  hdfc.transaction.request.type=S
-
-hdfc_payment_gatway_details: |
-  hdfc.email=egov@test.in
-  hdfc.phone=111111111
 
 # Ingress Configs
 ingress:
@@ -224,7 +175,7 @@ ingress:
   waf: 
     enabled: false
   additionalAnnotations: |
-    nginx.ingress.kubernetes.io/proxy-body-size: 8m
+    nginx.ingress.kubernetes.io/proxy-body-size: 30m
   context: "egi"
   
 

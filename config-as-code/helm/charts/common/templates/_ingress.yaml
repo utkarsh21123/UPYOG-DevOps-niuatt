@@ -28,9 +28,9 @@ spec:
     http:
       paths:
       - backend:
-{{- if .Values.ingress.zuul }}          
+{{- if .Values.ingress.gateway }}          
           service:
-            name: zuul
+            name: gateway
             port:
               number: 8080
 {{ else }}

@@ -51,11 +51,16 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: billing-service
+  - name: EGOV_MDMS_HOST_V2
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: mdms-v2      
   - name: EGOV_EDCR_HOST
     valueFrom:
       configMapKeyRef:
-        name: egov-config
-        key: egov-services-fqdn-name
+        name: egov-service-host
+        key: egov-edcr
   - name: EGOV_BPA_HOST
     valueFrom:
       configMapKeyRef:

@@ -43,6 +43,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-mdms-service
+  - name: EGOV_BPA_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: bpa-services      
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
@@ -57,7 +62,21 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-workflow-v2 
+        key: egov-workflow-v2
+  - name: EGOV_EDCR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-edcr
+  - name: EGOV_FILESTORE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore
+  - name: AAI_NOCAS_API_URL
+    value: "https://stagenocas.aai.aero/AAINOCASConfigServices/API/5C907181EE5B5E789C9A9FC157B517C5/NOCASULBIntegrations/GETULBData"
+  - name: AAI_NOCAS_AUTHORITY_KEY
+    value: "ASSAMULB@@!!12345"      
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
