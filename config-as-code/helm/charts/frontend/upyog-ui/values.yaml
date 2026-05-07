@@ -8,6 +8,7 @@ labels:
 ingress:
   enabled: true
   context: "upyog-ui"
+  gateway: false
 
 # Init Containers Configs
 initContainers: {}
