@@ -249,7 +249,7 @@ systemintegration: |
 # Ingress Configs
 ingress:
   enabled: true
-  zuul: false
+  gateway: false
   waf: 
     enabled: false
   #hostName: citya-niuatt.niua.in
