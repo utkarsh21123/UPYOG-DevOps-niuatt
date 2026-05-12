@@ -6,7 +6,7 @@ labels:
 # Ingress Configs
 ingress:
   enabled: true
-  gateway: true
+  zuul: true
   context: "pet-services"
 
 # Init Containers Configs
