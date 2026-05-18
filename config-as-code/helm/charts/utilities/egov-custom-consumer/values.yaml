@@ -13,8 +13,8 @@ replicas: "1"
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx192m -Xms192m"
-erp-host: "https://jalandhar-dev.egovernments.org/"
-erp-signout-url: "services/EGF/rest/logout"
+erp-host: "https://niuatt.niua.in/"
+erp-signout-url: "/services/EGF/rest/ClearToken"
 
 # Additional Container Envs
 env: |
@@ -29,4 +29,4 @@ env: |
   - name:  EGOV_COEXISTENCE_SINGOUT_URI
     value: {{ index .Values "erp-signout-url" | quote }}
   - name: EGOV_CUSTOM_ASYNC_FILTER_TOPIC
-    value: res-custom-filter
+    value: res-filter
