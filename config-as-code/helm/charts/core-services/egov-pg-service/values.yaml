@@ -221,4 +221,6 @@ env: |
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true"
+  - name: PAYGOV_REDIRECT_URL
+    value: "https://niuatt.niua.in/pg-service/transaction/v1/_redirect"
   {{- end }}  
