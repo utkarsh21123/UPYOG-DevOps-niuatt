@@ -7,6 +7,7 @@ labels:
 ingress:
   enabled: true
   context: "employee"
+  gateway: false
 
 # Init Containers Configs
 initContainers: {}
