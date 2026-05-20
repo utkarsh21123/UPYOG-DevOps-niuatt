@@ -43,6 +43,21 @@ java-debug: "true"
 
 # Additional Container Envs
 env: |
+  - name: SPRING_QUARTZ_DATASOURCE_JDBC_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-url
+  - name: SPRING_QUARTZ_DATASOURCE_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: username
+  - name: SPRING_QUARTZ_DATASOURCE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: password
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-pg-service
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
@@ -206,4 +221,6 @@ env: |
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true"
+  - name: PAYGOV_REDIRECT_URL
+    value: "https://niuatt.niua.in/pg-service/transaction/v1/_redirect"
   {{- end }}  
