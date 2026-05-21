@@ -1,6 +1,6 @@
 
 name: elasticsearch-data
-replicas: 3
+replicas: 1 # Test environment: keep a single data pod to avoid placement failures
 
 image:
   pullPolicy: IfNotPresent  
@@ -192,9 +192,8 @@ priorityClassName: ""
 # Changing this to a region would allow you to spread pods across regions
 antiAffinityTopologyKey: "kubernetes.io/hostname"
 
-# Hard means that by default pods will only be scheduled if there are enough nodes for them
-# and that they will never end up on the same node. Setting this to soft will do this "best effort"
-antiAffinity: "hard"
+# Soft means pods try to avoid the same node, but can still start when the cluster is small.
+antiAffinity: "soft" # Relaxed for test environment so Elasticsearch can start on a limited node pool
 
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
@@ -253,8 +252,8 @@ readinessProbe:
   successThreshold: 3
   timeoutSeconds: 5
 
-# https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html#request-params wait_for_status
-clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
+# Test environment: wait for yellow so the pod can become ready even when replicas are intentionally reduced.
+clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
 
 ## Use an alternate scheduler.
 ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
