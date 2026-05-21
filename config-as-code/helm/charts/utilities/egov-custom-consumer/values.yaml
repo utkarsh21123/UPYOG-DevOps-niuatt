@@ -29,4 +29,4 @@ env: |
   - name:  EGOV_COEXISTENCE_SINGOUT_URI
     value: {{ index .Values "erp-signout-url" | quote }}
   - name: EGOV_CUSTOM_ASYNC_FILTER_TOPIC
-    value: res-filter
+    value: res-custom-filter
