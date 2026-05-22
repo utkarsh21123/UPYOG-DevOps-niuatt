@@ -1011,7 +1011,7 @@ egov-finance:
 egov-edcr:
   ingress:
     enabled: true
-    gateway: true
+    gateway: false
     context: "edcr"
 microservice: |
   indexer.host=http://egov-indexer.egov:8080/
