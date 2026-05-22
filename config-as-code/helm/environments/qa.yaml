@@ -582,7 +582,7 @@ ndc-calculator:
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 egov-custom-consumer:
-  erp-host: "https://url/"
+  erp-host: "https://niuatt.niua.in/"
 
 egov-apportion-service:
   memory_limits: 512Mi
