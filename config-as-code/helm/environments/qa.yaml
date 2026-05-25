@@ -974,7 +974,7 @@ es-curator:
 # tenant.schemas=citya,cityb,cityc
 
 financeTenants: |
-  tenant.schemas=citya,cityb,cityc
+  tenant.schemas=citya,cityb,cityc,cityd
   tenant.niuatt.niua.in=state
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
