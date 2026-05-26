@@ -140,7 +140,7 @@ cluster-configs:
                 fsm: "http://fsm.egov:8080/"
                 vehicle: "http://vehicle.egov:8080"
                 vendor: "http://vendor.egov:8080"
-                egov-edcr: "http://egov-edcr.egov:8080/"
+                egov-edcr: "https://niuatt.niua.in/"
                 echallan-calculator: http://echallan-calculator.egov:8080/
                 echallan-services: http://echallan-services.egov:8080/
                 inbox: "http://inbox.egov:8080/"
