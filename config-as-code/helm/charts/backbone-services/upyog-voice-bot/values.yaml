@@ -10,6 +10,7 @@ ingress:
 image:
   repository: "upyog-voice-bot"
 replicas: "1"
+memory_limits: "2Gi"
 httpPort: "8090"
 appType: "java-spring" # Keep this to map to the common template layout
 # Env variables for app.py
