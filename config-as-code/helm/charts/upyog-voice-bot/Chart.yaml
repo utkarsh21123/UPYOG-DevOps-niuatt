@@ -1,0 +1,10 @@
+apiVersion: v2
+name: upyog-voice-bot
+description: Helm chart for the independent Python-based Upyog Voice Assistant Bot
+type: application
+version: 0.1.0
+appVersion: 2.0.0
+dependencies:
+- name: common
+  version: 0.0.5
+  repository: file://../common

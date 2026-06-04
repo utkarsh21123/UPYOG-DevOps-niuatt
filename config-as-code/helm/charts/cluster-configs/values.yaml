@@ -119,6 +119,10 @@ cluster-configs:
       namespace: egov
       name: case-management   
   
+    upyog-voice-bot:
+      namespace: egov
+      name: upyog-voice-bot
+
     minio:
       namespace: backbone
       name: minio
