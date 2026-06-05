@@ -411,8 +411,11 @@ egov-searcher:
   initContainers:
     gitSync:
       repo: "git@github.com:niua-org/upyog-configs"     ##### Change repo url with Your fork Repo url
-      branch: "niua-dev-2.0"                                   ##### Change repo branch with Your fork Repo branch
-
+      branch: "niua-dev-2.0"  
+                                       ##### Change repo branch with Your fork Repo branch
+upyog-voice-bot:
+  memory_limits: 2Gi
+  
 dashboard-analytics:
   config-schema-paths: "file:///work-dir/upyog-configs/configs/egov-dss-dashboards/dashboard-analytics/*.json"
   initContainers:
