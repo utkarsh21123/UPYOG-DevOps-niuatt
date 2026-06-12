@@ -60,6 +60,8 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-user
+  - name: ADV_PAYMENT_TIMER_REDIS_ENABLED
+    value: "true"
   - name: EGOV_LOCATION_HOST
     valueFrom:
       configMapKeyRef:
