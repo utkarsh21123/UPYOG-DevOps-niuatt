@@ -715,7 +715,10 @@ gateway:
     /upyog-voice-bot/stream,
     /upyog-voice-bot/voice,
     /upyog-voice-bot/chat,
-    /upyog-voice-bot/
+    /upyog-voice-bot/,
+    /upyog-voice-bot/assets/styles.css,
+    /upyog-voice-bot/assets/constants.js,
+    /upyog-voice-bot/assets/icons.js
   egov-mixed-mode-endpoints-whitelist: >-
     /pgr/seva/v1/_create,
     /pgr/seva/v1/_search,
@@ -783,7 +786,10 @@ gateway:
     /upyog-voice-bot/stream,
     /upyog-voice-bot/voice,
     /upyog-voice-bot/chat,
-    /upyog-voice-bot/
+    /upyog-voice-bot/,
+    /upyog-voice-bot/assets/styles.css,
+    /upyog-voice-bot/assets/constants.js,
+    /upyog-voice-bot/assets/icons.js
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
