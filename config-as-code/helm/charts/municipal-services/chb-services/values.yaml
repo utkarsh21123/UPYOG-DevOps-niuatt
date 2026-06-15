@@ -55,6 +55,10 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: mdms-v2
+  - name: CHB_PAYMENT_TIMER_REDIS_ENABLED
+    value: "true"
+  - name: SEAT_LOCK_ENABLED
+    value: "false"
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
