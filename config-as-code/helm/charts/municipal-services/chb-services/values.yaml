@@ -57,6 +57,10 @@ env: |
         key: mdms-v2
   - name: CHB_PAYMENT_TIMER_REDIS_ENABLED
     value: "true"
+  - name: SPRING_REDIS_HOST
+    value: redis.backbone
+  - name: SPRING_REDIS_PORT
+    value: "6379"
   - name: SEAT_LOCK_ENABLED
     value: "false"
   - name: EGOV_USER_HOST
