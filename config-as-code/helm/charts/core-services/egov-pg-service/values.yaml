@@ -63,7 +63,7 @@ env: |
       secretKeyRef:
         name: egov-pg-service
         key: icici-merchant-secret-key
- - name: ICICI_MERCHANT_ID
+  - name: ICICI_MERCHANT_ID
     valueFrom:
       secretKeyRef:
         name: egov-pg-service
