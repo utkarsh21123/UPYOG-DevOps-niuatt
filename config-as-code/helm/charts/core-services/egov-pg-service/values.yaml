@@ -53,6 +53,21 @@ env: |
       secretKeyRef:
         name: db
         key: username
+  - name: ICICI_AGGREGATOR_ID
+    valueFrom:
+      secretKeyRef:
+        name: egov-pg-service
+        key: icici-aggregator-id
+  - name: ICICI_MERCHANT_SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: egov-pg-service
+        key: icici-merchant-secret-key
+ - name: ICICI_MERCHANT_ID
+    valueFrom:
+      secretKeyRef:
+        name: egov-pg-service
+        key: icici-merchant-id
   - name: SPRING_QUARTZ_DATASOURCE_PASSWORD
     valueFrom:
       secretKeyRef:
