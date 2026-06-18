@@ -66,6 +66,10 @@ env: |
     value: redis.backbone
   - name: SPRING_REDIS_PORT
     value: "6379"
+  - name: SPRING_DATA_REDIS_HOST
+    value: redis.backbone
+  - name: SPRING_DATA_REDIS_PORT
+    value: "6379"
   - name: EGOV_LOCATION_HOST
     valueFrom:
       configMapKeyRef:
