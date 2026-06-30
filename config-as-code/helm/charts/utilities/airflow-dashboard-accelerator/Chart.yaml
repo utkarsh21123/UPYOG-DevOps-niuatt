@@ -1,0 +1,7 @@
+apiVersion: v2
+name: airflow-dashboard-accelerator
+description: Values chart for Apache Airflow DAGs/plugins for the National Dashboard Accelerator
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+

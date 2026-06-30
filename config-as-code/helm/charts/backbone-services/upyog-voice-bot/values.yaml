@@ -1,0 +1,42 @@
+# Labels (Using an independent group instead of "core")
+labels:
+  app: "upyog-voice-bot"
+  group: "voice-bot"
+# Dynamic Routing through Gateway
+ingress:
+  enabled: true
+  zuul: true
+  context: "upyog-voice-bot"
+image:
+  repository: "upyog-voice-bot"
+replicas: "1"
+memory_limits: "2Gi"
+httpPort: "8090"
+appType: "java-spring" # Keep this to map to the common template layout
+# Env variables for app.py
+env: |
+  - name: GROQ_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: upyog-voice-bot
+        key: groq-api-key
+  - name: BHASHINI_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: upyog-voice-bot
+        key: bhashini-api-key
+  - name: BHASHINI_USER_ID
+    valueFrom:
+      secretKeyRef:
+        name: upyog-voice-bot
+        key: bhashini-user-id
+  - name: BHASHINI_AUTH
+    valueFrom:
+      secretKeyRef:
+        name: upyog-voice-bot
+        key: bhashini-auth
+  - name: UPYOG_BASIC_AUTH
+    valueFrom:
+      secretKeyRef:
+        name: upyog-voice-bot
+        key: upyog-basic-auth

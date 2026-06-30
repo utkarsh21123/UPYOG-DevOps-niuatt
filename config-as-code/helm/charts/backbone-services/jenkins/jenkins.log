@@ -1,0 +1,314 @@
+Running from: /usr/share/jenkins/jenkins.war
+2026-06-16 05:22:03.859+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-06-16 05:22:03.891+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-06-16 05:22:03.937+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.8; built: 2026-04-01T01:09:18.991Z; git: c9cdc9aaa434a3665b8a53b4d1cc3684992da649; jvm 21.0.11+10-LTS
+2026-06-16 05:22:04.168+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-06-16 05:22:04.186+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-06-16 05:22:04.382+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-06-16 05:22:04.421+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@5b22b970{Jenkins v2.555.3,/,b=file:///var/jenkins_cache/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@22d1886d{STARTED}}
+2026-06-16 05:22:04.437+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@78c1a023{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-06-16 05:22:04.437+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@6a10b263{STARTING}[12.1.8,sto=0] @501ms
+2026-06-16 05:22:04.438+0000 [id=31]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-06-16 05:22:04.483+0000 [id=30]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.555.3
+2026-06-16 05:22:04.508+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-06-16 05:22:04.567+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-06-16 05:22:06.493+0000 [id=39]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-06-16 05:22:06.501+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-06-16 05:22:06.502+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-06-16 05:22:07.340+0000 [id=39]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-06-16 05:22:07.554+0000 [id=39]	WARNING	i.j.p.c.SecretSourceResolver$UnresolvedLookup#lookup: Configuration import: Found unresolved variable 'GIT_READ_SSH_PRIVATE_KEY'. Will default to empty string
+2026-06-16 05:22:07.558+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class jenkins.model.Jenkins#temporaryOfflineCause: type is abstract but not Describable.
+2026-06-16 05:22:07.562+0000 [id=39]	WARNING	o.j.p.m.i.c.MatrixAuthorizationStrategyConfigurator#setLegacyPermissions: Loading deprecated attribute 'permissions' for instance of 'hudson.security.ProjectMatrixAuthorizationStrategy'. Use 'entries' instead.
+2026-06-16 05:22:07.563+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam
+2026-06-16 05:22:07.563+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Configure:niua-org*nudmteam
+2026-06-16 05:22:07.563+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Connect:niua-org*nudmteam
+2026-06-16 05:22:07.563+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Create:niua-org*nudmteam
+2026-06-16 05:22:07.564+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.564+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Disconnect:niua-org*nudmteam
+2026-06-16 05:22:07.564+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/Create:niua-org*nudmteam
+2026-06-16 05:22:07.564+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.564+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/ManageDomains:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/Update:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/View:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Configure:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Create:niua-org*nudmteam
+2026-06-16 05:22:07.565+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Discover:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Move:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Administer:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Update:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Configure:niua-org*nudmteam
+2026-06-16 05:22:07.566+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Create:niua-org*nudmteam
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam-ci
+2026-06-16 05:22:07.567+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam-qa
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam-auat
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam-auat
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam-auat
+2026-06-16 05:22:07.568+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam-auat
+2026-06-16 05:22:07.569+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam-auat
+2026-06-16 05:22:07.569+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam-auat
+2026-06-16 05:22:07.569+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam-auat
+2026-06-16 05:22:07.569+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam-auat
+2026-06-16 05:22:07.573+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class org.csanchez.jenkins.plugins.kubernetes.PodTemplate#listener: type is abstract but not Describable.
+2026-06-16 05:22:07.573+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class org.csanchez.jenkins.plugins.kubernetes.PodTemplate#run: type is abstract but not Describable.
+2026-06-16 05:22:07.583+0000 [id=39]	WARNING	i.j.p.c.SecretSourceResolver$UnresolvedLookup#lookup: Configuration import: Found unresolved variable 'GITHUB_CLIENT_ID'. Will default to empty string
+2026-06-16 05:22:07.583+0000 [id=39]	WARNING	i.j.p.c.SecretSourceResolver$UnresolvedLookup#lookup: Configuration import: Found unresolved variable 'GITHUB_CLIENT_SECRET'. Will default to empty string
+2026-06-16 05:22:07.587+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class javaposse.jobdsl.plugin.GlobalJobDslSecurityConfiguration#metaClass: type is abstract but not Describable.
+2026-06-16 05:22:07.692+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class jenkins.plugins.git.GitSCMSource#owner: type is abstract but not Describable.
+2026-06-16 05:22:07.697+0000 [id=39]	WARNING	i.j.p.c.SecretSourceResolver$UnresolvedLookup#lookup: Configuration import: Found unresolved variable 'GIT_READ_SSH_PRIVATE_KEY'. Will default to empty string
+2026-06-16 05:22:07.701+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class jenkins.model.Jenkins#temporaryOfflineCause: type is abstract but not Describable.
+2026-06-16 05:22:07.702+0000 [id=39]	WARNING	o.j.p.m.i.c.MatrixAuthorizationStrategyConfigurator#setLegacyPermissions: Loading deprecated attribute 'permissions' for instance of 'hudson.security.ProjectMatrixAuthorizationStrategy'. Use 'entries' instead.
+2026-06-16 05:22:07.702+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam
+2026-06-16 05:22:07.702+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Configure:niua-org*nudmteam
+2026-06-16 05:22:07.702+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Connect:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Create:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Disconnect:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/Create:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/ManageDomains:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/Update:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Credentials/View:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Configure:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Create:niua-org*nudmteam
+2026-06-16 05:22:07.703+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Discover:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Move:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Administer:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Update:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Configure:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Create:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Delete:niua-org*nudmteam
+2026-06-16 05:22:07.704+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam-ci
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam-qa
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam-qa
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam-qa
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam-qa
+2026-06-16 05:22:07.705+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam-qa
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam-qa
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam-qa
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam-qa
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Agent/Build:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Build:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Cancel:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Read:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Job/Workspace:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Overall/Read:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): Run/Replay:niua-org*nudmteam-auat
+2026-06-16 05:22:07.706+0000 [id=39]	WARNING	o.j.p.m.AuthorizationContainer#add: Processing a permission assignment in the legacy format (without explicit TYPE prefix): View/Read:niua-org*nudmteam-auat
+2026-06-16 05:22:07.708+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class org.csanchez.jenkins.plugins.kubernetes.PodTemplate#listener: type is abstract but not Describable.
+2026-06-16 05:22:07.708+0000 [id=39]	WARNING	i.j.p.casc.BaseConfigurator#createAttribute: Can't handle class org.csanchez.jenkins.plugins.kubernetes.PodTemplate#run: type is abstract but not Describable.
+2026-06-16 05:22:07.714+0000 [id=39]	WARNING	i.j.p.c.SecretSourceResolver$UnresolvedLookup#lookup: Configuration import: Found unresolved variable 'GITHUB_CLIENT_ID'. Will default to empty string
+2026-06-16 05:22:07.714+0000 [id=39]	WARNING	i.j.p.c.SecretSourceResolver$UnresolvedLookup#lookup: Configuration import: Found unresolved variable 'GITHUB_CLIENT_SECRET'. Will default to empty string
+2026-06-16 05:22:07.742+0000 [id=39]	SEVERE	jenkins.InitReactorRunner$1#onTaskFailed: Failed ConfigurationAsCode.init
+java.lang.NullPointerException: Cannot invoke "String.codePoints()" because "text" is null
+	at hudson.util.PrettyPrintWriter.writeText(PrettyPrintWriter.java:214)
+	at hudson.util.PrettyPrintWriter.writeText(PrettyPrintWriter.java:210)
+	at hudson.util.PrettyPrintWriter.setValue(PrettyPrintWriter.java:192)
+	at com.thoughtworks.xstream.io.WriterWrapper.setValue(WriterWrapper.java:45)
+	at PluginClassLoader for github-oauth//org.jenkinsci.plugins.GithubSecurityRealm$ConverterImpl.marshal(GithubSecurityRealm.java:238)
+	at hudson.util.XStream2$AssociatedConverterImpl.marshal(XStream2.java:556)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:59)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:83)
+	at hudson.util.RobustReflectionConverter.marshallField(RobustReflectionConverter.java:283)
+	at hudson.util.RobustReflectionConverter$1.writeField(RobustReflectionConverter.java:270)
+Caused: java.lang.RuntimeException: Failed to serialize jenkins.model.Jenkins#securityRealm for class hudson.model.Hudson
+	at hudson.util.RobustReflectionConverter$1.writeField(RobustReflectionConverter.java:274)
+	at hudson.util.RobustReflectionConverter$1.visit(RobustReflectionConverter.java:241)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:174)
+	at hudson.util.RobustReflectionConverter.doMarshal(RobustReflectionConverter.java:226)
+	at hudson.util.RobustReflectionConverter.marshal(RobustReflectionConverter.java:165)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:59)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:44)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:83)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.marshal(AbstractTreeMarshallingStrategy.java:37)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:1307)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:1296)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:1269)
+	at hudson.XmlFile.write(XmlFile.java:216)
+Caused: java.io.IOException
+	at hudson.XmlFile.write(XmlFile.java:223)
+	at jenkins.model.Jenkins.save(Jenkins.java:3597)
+	at hudson.BulkChange.commit(BulkChange.java:98)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.BaseConfigurator.configure(BaseConfigurator.java:363)
+Caused: io.jenkins.plugins.casc.ConfiguratorException: Failed to save hudson.model.Hudson@315e9a73
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.BaseConfigurator.configure(BaseConfigurator.java:365)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.lambda$configureWith$6(ConfigurationAsCode.java:876)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.invokeWith(ConfigurationAsCode.java:826)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.configureWith(ConfigurationAsCode.java:876)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.configureWith(ConfigurationAsCode.java:748)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.configure(ConfigurationAsCode.java:369)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.init(ConfigurationAsCode.java:358)
+Caused: io.jenkins.plugins.casc.ConfigurationAsCodeBootFailure
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.init(ConfigurationAsCode.java:360)
+Caused: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at hudson.init.TaskMethodFinder.invoke(TaskMethodFinder.java:109)
+Caused: java.lang.Error
+	at hudson.init.TaskMethodFinder.invoke(TaskMethodFinder.java:115)
+	at hudson.init.TaskMethodFinder$TaskImpl.run(TaskMethodFinder.java:185)
+	at org.jvnet.hudson.reactor.Reactor.runTask(Reactor.java:304)
+	at jenkins.model.Jenkins$5.runTask(Jenkins.java:1151)
+	at org.jvnet.hudson.reactor.Reactor$2.run(Reactor.java:221)
+	at org.jvnet.hudson.reactor.Reactor$Node.run(Reactor.java:120)
+	at jenkins.security.ImpersonatingExecutorService.lambda$wrap$0(ImpersonatingExecutorService.java:66)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-16 05:22:07.742+0000 [id=30]	SEVERE	hudson.util.BootFailure#publish: Failed to initialize Jenkins
+java.lang.NullPointerException: Cannot invoke "String.codePoints()" because "text" is null
+	at hudson.util.PrettyPrintWriter.writeText(PrettyPrintWriter.java:214)
+	at hudson.util.PrettyPrintWriter.writeText(PrettyPrintWriter.java:210)
+	at hudson.util.PrettyPrintWriter.setValue(PrettyPrintWriter.java:192)
+	at com.thoughtworks.xstream.io.WriterWrapper.setValue(WriterWrapper.java:45)
+	at PluginClassLoader for github-oauth//org.jenkinsci.plugins.GithubSecurityRealm$ConverterImpl.marshal(GithubSecurityRealm.java:238)
+	at hudson.util.XStream2$AssociatedConverterImpl.marshal(XStream2.java:556)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:59)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:83)
+	at hudson.util.RobustReflectionConverter.marshallField(RobustReflectionConverter.java:283)
+	at hudson.util.RobustReflectionConverter$1.writeField(RobustReflectionConverter.java:270)
+Caused: java.lang.RuntimeException: Failed to serialize jenkins.model.Jenkins#securityRealm for class hudson.model.Hudson
+	at hudson.util.RobustReflectionConverter$1.writeField(RobustReflectionConverter.java:274)
+	at hudson.util.RobustReflectionConverter$1.visit(RobustReflectionConverter.java:241)
+	at com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider.visitSerializableFields(PureJavaReflectionProvider.java:174)
+	at hudson.util.RobustReflectionConverter.doMarshal(RobustReflectionConverter.java:226)
+	at hudson.util.RobustReflectionConverter.marshal(RobustReflectionConverter.java:165)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:68)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:59)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:44)
+	at com.thoughtworks.xstream.core.TreeMarshaller.start(TreeMarshaller.java:83)
+	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.marshal(AbstractTreeMarshallingStrategy.java:37)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:1307)
+	at com.thoughtworks.xstream.XStream.marshal(XStream.java:1296)
+	at com.thoughtworks.xstream.XStream.toXML(XStream.java:1269)
+	at hudson.XmlFile.write(XmlFile.java:216)
+Caused: java.io.IOException
+	at hudson.XmlFile.write(XmlFile.java:223)
+	at jenkins.model.Jenkins.save(Jenkins.java:3597)
+	at hudson.BulkChange.commit(BulkChange.java:98)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.BaseConfigurator.configure(BaseConfigurator.java:363)
+Caused: io.jenkins.plugins.casc.ConfiguratorException: Failed to save hudson.model.Hudson@315e9a73
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.BaseConfigurator.configure(BaseConfigurator.java:365)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.lambda$configureWith$6(ConfigurationAsCode.java:876)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.invokeWith(ConfigurationAsCode.java:826)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.configureWith(ConfigurationAsCode.java:876)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.configureWith(ConfigurationAsCode.java:748)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.configure(ConfigurationAsCode.java:369)
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.init(ConfigurationAsCode.java:358)
+Caused: io.jenkins.plugins.casc.ConfigurationAsCodeBootFailure
+	at PluginClassLoader for configuration-as-code//io.jenkins.plugins.casc.ConfigurationAsCode.init(ConfigurationAsCode.java:360)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at hudson.init.TaskMethodFinder.invoke(TaskMethodFinder.java:109)
+	at hudson.init.TaskMethodFinder$TaskImpl.run(TaskMethodFinder.java:185)
+	at org.jvnet.hudson.reactor.Reactor.runTask(Reactor.java:304)
+	at jenkins.model.Jenkins$5.runTask(Jenkins.java:1151)
+	at org.jvnet.hudson.reactor.Reactor$2.run(Reactor.java:221)
+	at org.jvnet.hudson.reactor.Reactor$Node.run(Reactor.java:120)
+	at jenkins.security.ImpersonatingExecutorService.lambda$wrap$0(ImpersonatingExecutorService.java:66)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-16 05:22:07.745+0000 [id=30]	INFO	hudson.lifecycle.Lifecycle#onStatusUpdate: Stopping Jenkins
+2026-06-16 05:22:07.751+0000 [id=30]	INFO	jenkins.model.Jenkins$13#onAttained: Started termination
+2026-06-16 05:22:07.763+0000 [id=30]	INFO	jenkins.model.Jenkins$13#onAttained: Completed termination
+2026-06-16 05:22:07.763+0000 [id=30]	INFO	jenkins.model.Jenkins#_cleanUpDisconnectComputers: Starting node disconnection
+2026-06-16 05:22:07.769+0000 [id=30]	INFO	jenkins.model.Jenkins#_cleanUpShutdownPluginManager: Stopping plugin manager
+2026-06-16 05:22:07.775+0000 [id=30]	INFO	jenkins.model.Jenkins#_cleanUpPersistQueue: Persisting build queue
+2026-06-16 05:22:07.778+0000 [id=30]	INFO	jenkins.model.Jenkins#_cleanUpAwaitDisconnects: Waiting for node disconnection completion
+2026-06-16 05:22:07.778+0000 [id=30]	INFO	hudson.lifecycle.Lifecycle#onStatusUpdate: Jenkins stopped
+2026-06-16 05:22:07.778+0000 [id=32]	INFO	winstone.Logger#logInternal: JVM is terminating. Shutting down Jetty
+2026-06-16 05:22:07.778+0000 [id=32]	INFO	org.eclipse.jetty.server.Server#doStop: Stopped oejs.Server@6a10b263{STOPPING}[12.1.8,sto=0]
+2026-06-16 05:22:07.779+0000 [id=32]	INFO	o.e.j.server.AbstractConnector#doStop: Stopped oejs.ServerConnector@78c1a023{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-06-16 05:22:07.780+0000 [id=32]	INFO	hudson.WebAppMain#contextDestroyed: Shutting down a Jenkins instance that was still starting up
+java.lang.Throwable: reason
+	at hudson.WebAppMain.contextDestroyed(WebAppMain.java:419)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.ContextHandler.callContextDestroyed(ContextHandler.java:910)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.servlet.ServletContextHandler.callContextDestroyed(ServletContextHandler.java:608)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.ContextHandler.contextDestroyed(ContextHandler.java:867)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.servlet.ServletHandler.doStop(ServletHandler.java:307)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:181)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:203)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.AbstractHandler.doStop(AbstractHandler.java:88)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.security.SecurityHandler.doStop(SecurityHandler.java:414)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.security.ConstraintSecurityHandler.doStop(ConstraintSecurityHandler.java:413)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:181)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:203)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.AbstractHandler.doStop(AbstractHandler.java:88)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:181)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:203)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.AbstractHandler.doStop(AbstractHandler.java:88)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.ContextHandler.stopContext(ContextHandler.java:890)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.servlet.ServletContextHandler.stopContext(ServletContextHandler.java:371)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.webapp.WebAppContext.stopWebapp(WebAppContext.java:1427)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.webapp.WebAppContext.stopContext(WebAppContext.java:1387)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.ContextHandler.doStopInContext(ContextHandler.java:741)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.handler.ContextHandler$ScopedContext.call(ContextHandler.java:1632)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.ContextHandler.doStop(ContextHandler.java:734)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.servlet.ServletContextHandler.doStop(ServletContextHandler.java:284)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:181)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:203)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.Handler$Abstract.doStop(Handler.java:553)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.handler.ContextHandler.lambda$doStop$0(ContextHandler.java:961)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.handler.ContextHandler$ScopedContext.call(ContextHandler.java:1638)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.handler.ContextHandler.doStop(ContextHandler.java:961)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.ee9.nested.ContextHandler$CoreContextHandler.doStop(ContextHandler.java:2891)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:181)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:203)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.Handler$Abstract.doStop(Handler.java:553)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.handler.gzip.GzipHandler.doStop(GzipHandler.java:146)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLifeCycle.java:181)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerLifeCycle.java:203)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.Handler$Abstract.doStop(Handler.java:553)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.server.Server.doStop(Server.java:738)
+	at Jenkins Main ClassLoader//org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeCycle.java:131)
+	at Jenkins Main ClassLoader//winstone.Launcher.shutdown(Launcher.java:441)
+	at Jenkins Main ClassLoader//winstone.ShutdownHook.run(ShutdownHook.java:28)
