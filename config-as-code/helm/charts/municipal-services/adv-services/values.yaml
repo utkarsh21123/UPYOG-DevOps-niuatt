@@ -63,7 +63,7 @@ env: |
         name: egov-service-host
         key: egov-user
   - name: ADV_PAYMENT_TIMER_REDIS_ENABLED
-    value: "true"
+    value: "false"
   - name: SPRING_REDIS_HOST
     value: redis.backbone
   - name: SPRING_REDIS_PORT
