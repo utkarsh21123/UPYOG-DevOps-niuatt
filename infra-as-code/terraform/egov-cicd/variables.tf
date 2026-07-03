@@ -31,7 +31,7 @@ variable "override_instance_types" {
 }
 
 variable "number_of_worker_nodes" {
-  default = "1"
+  default = 1
 }
 
 
