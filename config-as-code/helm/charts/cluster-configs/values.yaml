@@ -123,6 +123,10 @@ cluster-configs:
       namespace: egov
       name: upyog-voice-bot
 
+    kafka-connect:
+      namespace: [ kafka-cluster, kafka-kraft ]
+      name: kafka-connect-secret
+
     minio:
       namespace: backbone
       name: minio

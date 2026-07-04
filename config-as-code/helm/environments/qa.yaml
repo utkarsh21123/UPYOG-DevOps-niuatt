@@ -1015,6 +1015,32 @@ kafka-connect:
     tag: 8.1.3
   memory_limits: 1Gi
   heap: "-Xmx756m -Xms756m"
+  extraVolumes: |
+    - name: elasticsearch-ca
+      secret:
+        secretName: kafka-connect-secret
+        items:
+          - key: elastic-truststore.jks
+            path: elastic-truststore.jks
+  extraVolumeMounts: |
+    - name: elasticsearch-ca
+      mountPath: /tmp/elastic-truststore.jks
+      subPath: elastic-truststore.jks
+      readOnly: true
+
+kafka-connect-infra:
+  extraVolumes: |
+    - name: elasticsearch-ca
+      secret:
+        secretName: kafka-connect-secret
+        items:
+          - key: elastic-truststore.jks
+            path: elastic-truststore.jks
+  extraVolumeMounts: |
+    - name: elasticsearch-ca
+      mountPath: /tmp/elastic-truststore.jks
+      subPath: elastic-truststore.jks
+      readOnly: true
 
 
 # zookeeper-v2 AWS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
