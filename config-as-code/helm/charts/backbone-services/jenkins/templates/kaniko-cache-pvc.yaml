@@ -1,0 +1,27 @@
+{{- if .Values.kanikoCache.enabled -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .Values.kanikoCache.existingClaim | default "kaniko-cache-claim" }}
+  namespace: {{ template "jenkins.namespace" . }}
+  labels:
+    {{- include "jenkins.labels" . | nindent 4 }}
+    app.kubernetes.io/component: kaniko-cache
+{{- if .Values.kanikoCache.annotations }}
+  annotations:
+{{ toYaml .Values.kanikoCache.annotations | indent 4 }}
+{{- end }}
+spec:
+  accessModes:
+    - {{ .Values.kanikoCache.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.kanikoCache.size | quote }}
+{{- if .Values.kanikoCache.storageClass }}
+{{- if (eq "-" .Values.kanikoCache.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ tpl .Values.kanikoCache.storageClass . }}"
+{{- end }}
+{{- end }}
+{{- end }}

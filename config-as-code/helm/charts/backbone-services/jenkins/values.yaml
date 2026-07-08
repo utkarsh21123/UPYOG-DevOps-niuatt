@@ -26,10 +26,12 @@ oauth:
       - niua-org*nudmteam-qa
       - niua-org*nudmteam-auat
 jobBuilder:
-  repos: "'git@github.com:vikash-niua/UPYOG-NIUA-Vikash.git'"
+  repos: "'https://github.com/niua-org/UPYOG-NIUA.git'"
 
 jenkins:
-  deploymentJobs: []
+  deploymentJobs:
+    - name: ci
+    - name: qa
 
 
 # For FQDN resolving of the controller service. Change this value to match your existing configuration.
@@ -180,12 +182,6 @@ controller:
 
   # -- Environment variables for Jenkins Container
   containerEnv:
-    - name: GIT_READ_SSH_PRIVATE_KEY
-      valueFrom:
-        secretKeyRef:
-          name: jenkins-credentials
-          key: gitReadSshPrivateKey
-
     - name: GITHUB_CLIENT_ID
       valueFrom:
         secretKeyRef:
@@ -242,7 +238,7 @@ controller:
   jenkinsUrlProtocol:
 
   # -- Set Jenkins URL if you are not using the ingress definitions provided by the chart
-  jenkinsUrl:
+  jenkinsUrl: https://jenkins-niuatt.niua.in
 
   # If you set this prefix and use ingress controller, then you might want to set the ingress path below
   # I.e., "/jenkins"
@@ -604,8 +600,8 @@ controller:
                 modernSCM:
                   scm:
                     git:
-                      credentialsId: "git_read"
-                      remote: "git@github.com:vikash-niua/CIOps-vikash.git"
+                      credentialsId: "git_read_token"
+                      remote: "https://github.com/niua-org/CIOps.git"
                       traits:
                       - "gitBranchDiscovery"
       github-api-token: |
@@ -616,26 +612,13 @@ controller:
                   - usernamePassword:
                       scope: GLOBAL
                       id: "git_read_token"
-                      username: "vikash-niua"
+                      username: "niua-org"
                       password: "${GITHUB_PAT}"
                       description: "GitHub PAT for Contents API calls (router job config fetch)"
 
       system-message: |
         jenkins:
           systemMessage: "Welcome to NIUA Internal Tech CI CD server. This Jenkins is configured and managed as code."
-
-      git-credentials: |
-        credentials:
-          system:
-            domainCredentials:
-              - credentials:
-                  - basicSSHUserPrivateKey:
-                      scope: GLOBAL
-                      id: git_read
-                      description: "SSH private key file for git checkouts"
-                      privateKeySource:
-                        directEntry:
-                          privateKey: ${GIT_READ_SSH_PRIVATE_KEY}
 
       seed-job-builder: |
         jobs:
@@ -696,7 +679,7 @@ controller:
                 disabled(false)
               }
               {{- else }}
-              deployer(repo:'git@github.com:vikash-niua/UPYOG-DevOps-Vikash.git', branch: 'UPYOG-Bootcamp-jenkins-chatbot', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
+              deployer(repo:'https://github.com/niua-org/UPYOG-NIUA.git', branch: 'master', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
                       sandbox() 
                     }
                 }
@@ -716,13 +699,6 @@ controller:
         tokenGenerationOnCreationEnabled: false
         usageStatisticsEnabled: true
 
-    # securityRealm: |-
-    #   github:
-    #     githubWebUri: "https://github.com"
-    #     githubApiUri: "https://api.github.com"
-    #     clientID: "${GITHUB_CLIENT_ID}"
-    #     clientSecret: "${GITHUB_CLIENT_SECRET}"
-    #     oauthScopes: "read:org,user:email"
     securityRealm: |-
       local:
         allowsSignup: false
@@ -731,6 +707,13 @@ controller:
           - id: admin
             name: Jenkins Admin
             password: admin123
+    # securityRealm: |-
+    #   github:
+    #     githubWebUri: "https://github.com"
+    #     githubApiUri: "https://api.github.com"
+    #     clientID: "${GITHUB_CLIENT_ID}"
+    #     clientSecret: "${GITHUB_CLIENT_SECRET}"
+    #     oauthScopes: "read:org,user:email"
 
     authorizationStrategy: |-
       projectMatrix:
@@ -1564,6 +1547,20 @@ persistence:
   #  - mountPath: /var/nothing
   #    name: nothing
   #    readOnly: true
+
+kanikoCache:
+  # -- Enable creation of the kaniko-cache-claim PVC used by build agent pods
+  enabled: true
+  # -- Provide the name of an existing PVC; defaults to "kaniko-cache-claim"
+  existingClaim: ""
+  # -- Storage class for the kaniko cache PVC (empty = cluster default)
+  storageClass: ""
+  # -- The PVC access mode
+  accessMode: "ReadWriteOnce"
+  # -- The size of the PVC
+  size: "10Gi"
+  # -- Annotations for the PVC
+  annotations: {}
 
 networkPolicy:
   # -- Enable the creation of NetworkPolicy resources
