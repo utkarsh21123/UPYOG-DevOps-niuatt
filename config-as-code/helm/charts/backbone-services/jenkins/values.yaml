@@ -19,7 +19,7 @@ oauth:
 
   acl:
     admin:
-      - niua-org*nudm-jenkinsadmin
+      - niua-org*jenkimns-admin
 
     user:
       - niua-org*nudmteam
@@ -86,7 +86,7 @@ controller:
   disableRememberMe: false
 
   # -- Set Number of executors
-  numExecutors: 0
+  numExecutors: 2
 
   # -- Sets the executor mode of the Jenkins node. Possible values are "NORMAL" or "EXCLUSIVE"
   executorMode: "NORMAL"
