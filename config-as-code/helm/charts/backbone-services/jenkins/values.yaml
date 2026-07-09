@@ -19,12 +19,10 @@ oauth:
 
   acl:
     admin:
-      - niua-org*nudmteam
+      - niua-org*nudm-jenkinsadmin
 
     user:
-      - niua-org*nudmteam-ci
-      - niua-org*nudmteam-qa
-      - niua-org*nudmteam-auat
+      - niua-org*nudmteam
 jobBuilder:
   repos: "'https://github.com/niua-org/UPYOG-NIUA.git'"
 
@@ -221,6 +219,12 @@ controller:
         secretKeyRef:
           name: jenkins-credentials
           key: dockerConfigJson
+
+    - name: GITHUB_WEBHOOK_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: jenkins-credentials
+          key: webhookToken
   #   - name: http_proxy
   #     value: "http://192.168.64.1:3128"
 
@@ -679,7 +683,7 @@ controller:
                 disabled(false)
               }
               {{- else }}
-              deployer(repo:'https://github.com/niua-org/UPYOG-NIUA.git', branch: 'master', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
+              deployer(repo:'https://github.com/niua-org/UPYOG-DevOps-niuatt.git', branch: 'master', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
                       sandbox() 
                     }
                 }
@@ -699,21 +703,21 @@ controller:
         tokenGenerationOnCreationEnabled: false
         usageStatisticsEnabled: true
 
-    securityRealm: |-
-      local:
-        allowsSignup: false
-        enableCaptcha: false
-        users:
-          - id: admin
-            name: Jenkins Admin
-            password: admin123
     # securityRealm: |-
-    #   github:
-    #     githubWebUri: "https://github.com"
-    #     githubApiUri: "https://api.github.com"
-    #     clientID: "${GITHUB_CLIENT_ID}"
-    #     clientSecret: "${GITHUB_CLIENT_SECRET}"
-    #     oauthScopes: "read:org,user:email"
+    #   local:
+    #     allowsSignup: false
+    #     enableCaptcha: false
+    #     users:
+    #       - id: admin
+    #         name: Jenkins Admin
+    #         password: admin123
+    securityRealm: |-
+      github:
+        githubWebUri: "https://github.com"
+        githubApiUri: "https://api.github.com"
+        clientID: "${GITHUB_CLIENT_ID}"
+        clientSecret: "${GITHUB_CLIENT_SECRET}"
+        oauthScopes: "read:org,user:email"
 
     authorizationStrategy: |-
       projectMatrix:
@@ -1554,7 +1558,7 @@ kanikoCache:
   # -- Provide the name of an existing PVC; defaults to "kaniko-cache-claim"
   existingClaim: ""
   # -- Storage class for the kaniko cache PVC (empty = cluster default)
-  storageClass: ""
+  storageClass: "gp2"
   # -- The PVC access mode
   accessMode: "ReadWriteOnce"
   # -- The size of the PVC
