@@ -9,6 +9,7 @@ namespace: egov
 ingress:
   enabled: true
   context: "cnd-ui"
+  gateway: false
 
 # Init Containers Configs
 initContainers: {}
