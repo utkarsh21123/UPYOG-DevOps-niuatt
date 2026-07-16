@@ -21,7 +21,7 @@ output "kubectl_config" {
 }
 
 
-output "jenkins" {
-  value = "${module.jenkins.volume_ids}"
-}
+#output "jenkins" {
+#  value = "${module.jenkins.volume_ids}"
+#}
 

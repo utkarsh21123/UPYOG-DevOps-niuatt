@@ -82,14 +82,54 @@ resource "aws_security_group_rule" "nodes_to_cluster_api" {
   source_security_group_id = module.eks.node_security_group_id
 }
 
-module "jenkins" {
+#module "jenkins" {
+#  source = "../modules/storage/aws"
+#  storage_count = 1
+#  environment = "${var.cluster_name}"
+#  disk_prefix = "jenkins-home"
+#  availability_zones = "${var.availability_zones}"
+#  storage_sku = "gp3"
+#  disk_size_gb = "50"
+#}
 
-  source = "../modules/storage/aws"
-  storage_count = 1
-  environment = "${var.cluster_name}"
-  disk_prefix = "jenkins-home"
-  availability_zones = "${var.availability_zones}"
-  storage_sku = "gp3"
-  disk_size_gb = "80"
-  
+# IRSA role for Jenkins deployer - allows KMS decryption of SOPS files
+data "aws_iam_policy_document" "jenkins_irsa_trust" {
+  statement {
+    effect = "Allow"
+    principals {
+      type        = "Federated"
+      identifiers = [module.eks.oidc_provider_arn]
+    }
+    actions = ["sts:AssumeRoleWithWebIdentity"]
+    condition {
+      test     = "StringLike"
+      variable = "${replace(module.eks.cluster_oidc_issuer_url, "https://", "")}:sub"
+      values   = ["system:serviceaccount:jenkins:*"]
+    }
+  }
+}
+
+data "aws_iam_policy_document" "jenkins_kms_decrypt" {
+  statement {
+    effect = "Allow"
+    actions = [
+      "kms:Decrypt",
+      "kms:DescribeKey",
+      "kms:Encrypt",
+      "kms:ReEncrypt*",
+      "kms:GenerateDataKey*"
+    ]
+    resources = ["arn:aws:kms:ap-south-1:851725637287:key/4ac80ba0-2bb2-4e3e-9402-fc129402066a"]
+  }
+}
+
+resource "aws_iam_role" "jenkins_irsa" {
+  name               = "jenkins-niuatt-irsa"
+  assume_role_policy = data.aws_iam_policy_document.jenkins_irsa_trust.json
+}
+
+resource "aws_iam_role_policy" "jenkins_kms_decrypt" {
+  name   = "kms-decrypt-sops"
+  role   = aws_iam_role.jenkins_irsa.id
+  policy = data.aws_iam_policy_document.jenkins_kms_decrypt.json
 }

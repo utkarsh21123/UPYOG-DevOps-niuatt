@@ -230,7 +230,7 @@ controller:
 
   # Set min/max heap here if needed with "-Xms512m -Xmx512m"
   # -- Append to `JAVA_OPTS` env var
-  javaOpts:
+  javaOpts: "-Duser.timezone=Asia/Kolkata"
   # -- Append to `JENKINS_OPTS` env var
   jenkinsOpts:
 
@@ -285,7 +285,7 @@ controller:
   containerSecurityContext:
     runAsUser: 1000
     runAsGroup: 1000
-    readOnlyRootFilesystem: true
+    readOnlyRootFilesystem: false
     allowPrivilegeEscalation: false
 
   # -- enable or disable the controller k8s service
@@ -480,14 +480,14 @@ controller:
   # Plugins will be installed during Jenkins controller start
   # -- List of Jenkins plugins to install. If you don't want to install plugins, set it to `false`
   installPlugins:
-    - kubernetes:4423.vb_59f230b_ce53
-    - workflow-aggregator:608.v67378e9d3db_1
-    - git:5.10.1
-    - configuration-as-code:2082.vdb_db_4622e9fa_
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - configuration-as-code
     - matrix-auth
     - github-oauth
     - job-dsl
-    - pipeline-utility-steps:2.18.0
+    - pipeline-utility-steps
     - git-parameter
     - generic-webhook-trigger
 
@@ -504,7 +504,7 @@ controller:
   # Without this; whenever the controller gets restarted (Evicted, etc.) it will fetch plugin updates that have the potential to cause breakage.
   # Note that for this to work, `persistence.enabled` needs to be set to `true`
   # -- Initialize only on first installation. Ensures plugins do not get updated inadvertently. Requires `persistence.enabled` to be set to `true`
-  initializeOnce: false
+  initializeOnce: true
 
   # Enable to always override the installed plugins with the values of 'controller.installPlugins' on upgrade or redeployment.
   # -- Overwrite installed plugins on start
@@ -512,7 +512,7 @@ controller:
 
   # Configures if plugins bundled with `controller.image` should be overwritten with the values of 'controller.installPlugins' on upgrade or redeployment.
   # -- Overwrite plugins that are already installed in the controller image
-  overwritePluginsFromImage: true
+  overwritePluginsFromImage: false
 
   # Configures the restrictions for naming projects. Set this key to null or empty to skip it in the default config.
   projectNamingStrategy: standard
@@ -603,7 +603,7 @@ controller:
               retriever:
                 modernSCM:
                   scm:
-                    git:
+                    gitSource:
                       credentialsId: "git_read_token"
                       remote: "https://github.com/niua-org/CIOps.git"
                       traits:
@@ -629,12 +629,18 @@ controller:
           - script: >
               pipelineJob("Job Builder") {
                   logRotator(-1, 5, -1, -1)
+                  parameters {
+                    booleanParam('CREATE_CATEGORY_JOBS', false, 'Check to create category-wise build+deploy jobs (e.g., business-services, core-services)')
+                  }
                   definition {
                       cps {
                         script("""
                         library 'ci-libs'
 
-                        jobBuilder(urls: [{{ .Values.jobBuilder.repos }}])
+                        jobBuilder(
+                          urls: [{{ .Values.jobBuilder.repos }}],
+                          createCategoryJobs: params.CREATE_CATEGORY_JOBS
+                        )
                         """)
                       }
                   }
@@ -647,6 +653,7 @@ controller:
         {{- range $job := .Values.jenkins.deploymentJobs }}
           - script: >
               pipelineJob("deployments/deploy-to-{{ $job.name }}") {
+                logRotator(-1, 6, -1, -1)
                 description()
                 {{- if $job.acl }}
                 authorization {
@@ -744,9 +751,6 @@ controller:
           - Job/Read:{{ $group }}
           - Job/Workspace:{{ $group }}
           - Overall/Administer:{{ $group }}
-          - Overall/Read:{{ $group }}
-          - Overall/Administer:admin
-          - Overall/Read:admin
           - Run/Delete:{{ $group }}
           - Run/Replay:{{ $group }}
           - Run/Update:{{ $group }}
@@ -788,7 +792,7 @@ controller:
       # Auto-reload uses the http://<jenkins_url>/reload-configuration-as-code endpoint to reapply config when changes to
       # the configScripts are detected.
       # -- Enable Jenkins Config as Code auto-reload
-      enabled: true
+      enabled: false
       image:
         # -- Registry for the image that triggers the reload
         registry: docker.io
@@ -1531,7 +1535,7 @@ persistence:
   # -- The PVC access mode
   accessMode: "ReadWriteOnce"
   # -- The size of the PVC
-  size: "8Gi"
+  size: "20Gi"
 
   # ref: https://kubernetes.io/docs/concepts/storage/volume-pvc-datasource/
   # -- Existing data source to clone PVC from
@@ -1643,7 +1647,7 @@ awsSecurityGroupPolicies:
       securityGroupIds: []
       podSelector: {}
 
-# Here you can configure unit tests values when executing the helm unittest in the CONTRIBUTING.md
+# Here you can configure unit tests values when executing the helm unittest
 helmtest:
   # A testing framework for bash
   bats:
