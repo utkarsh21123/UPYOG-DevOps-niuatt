@@ -44,24 +44,6 @@ env: |
         name: egov-service-host
         key: egov-user
 
-  - name: EPRAMAAN_CLIENTID
-    valueFrom:
-      secretKeyRef:
-        name: requester-services-dx
-        key: epramaan-client-id
-
-  - name: EPRAMAAN_AESKEY
-    valueFrom:
-      secretKeyRef:
-        name: requester-services-dx
-        key: epramaan-aes-key
-
-  - name: EPRAMAAN_CERTIFICATE_VALUE
-    valueFrom:
-      secretKeyRef:
-        name: requester-services-dx
-        key: epramaan-certificate-value
-
   - name: EPRAMAAN_REDIRECTURI
     value: "https://assamuat.niua.in/upyog-ui/citizen"
 
