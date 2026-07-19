@@ -27,7 +27,10 @@ tracing-enabled: true
 # Additional Container Envs
 env: |
   - name: DB_HOST
-    value: "ec2-13-203-111-246.ap-south-1.compute.amazonaws.com"
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: firenoc-db-host
   - name: DB_NAME
     valueFrom:
       configMapKeyRef:
