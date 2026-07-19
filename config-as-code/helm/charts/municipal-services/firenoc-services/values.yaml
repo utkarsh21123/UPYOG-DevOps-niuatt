@@ -30,7 +30,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-host
+        key: db-host-without-port
   - name: DB_NAME
     valueFrom:
       configMapKeyRef:
