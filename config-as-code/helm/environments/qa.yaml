@@ -246,6 +246,10 @@ mdms-v2:
 apply-workflow:
   heap: "-Xmx256m -Xms256m"
   memory_limits: 512Mi
+
+garbage-service:
+  heap: "-Xmx256m -Xms256m"
+  memory_limits: 512Mi
   
 egov-filestore:
   heap: "-Xmx256m -Xms256m"
