@@ -706,7 +706,7 @@ gateway:
     /egov-url-shortening,
     /whatsapp-webhook/messages,
     /edcr/rest/dcr/downloadfile,
-    /dashboard-//upload,
+    /dashboard-ingest/ingest/upload,
     /egov-searcher/water-services/wateropensearch/_get,
     /egov-searcher/sewerage-services/sewerageopensearch/_get,
     /xstate-chatbot/status,
