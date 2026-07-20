@@ -53,6 +53,8 @@ env: |
     value:  {{ index .Values "master-module-fields-mapping" | quote }}
   - name: MODULE_ALLOWED_GROUPBY_FIELDS_MAPPING
     value:  {{ index .Values "module-allowed-groupby-fields-mapping" | quote }}
+  - name: NATIONAL_DASHBOARD_USER
+    value:  {{ index .Values "national-dashboard-user" | quote }}
   - name: SERVER_TOMCAT_MAX_THREADS
     value:  {{ index .Values "server-tomcat-max-threads" | quote }}
   - name: JAVA_OPTS
@@ -70,6 +72,4 @@ env: |
     value: "false"  
   - name: MANAGEMENT_SECURITY_ENABLED
     value: "false"
-  - name: NATIONAL_DASHBOARD_USER
-    value: '{"SUPERUUID":"4afdda02-2a2b-4f40-952a-ac4eb71f8895"}'
     
