@@ -23,8 +23,8 @@ image:
 replicas: "1"
 healthChecks:
   enabled: true
-  livenessProbePath: "/garbage-service/health"
-  readinessProbePath: "/garbage-service/health"
+  livenessProbePath: "/gc-services/health"
+  readinessProbePath: "/gc-services/health"
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx256m -Xms256m"
