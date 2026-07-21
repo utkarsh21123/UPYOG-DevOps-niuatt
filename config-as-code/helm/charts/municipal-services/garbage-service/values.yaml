@@ -1,6 +1,6 @@
 # Common Labels
 labels:
-  app: "gc-services"
+  app: "garbage-service"
   group: "rainmaker"
 
 # Ingress Configs
@@ -15,11 +15,11 @@ initContainers:
     enabled: true
     schemaTable: "garbage_service_schema"
     image:
-      repository: "gc-services-db"
+      repository: "garbage-service-db"
 
 # Container Configs
 image:
-  repository: "gc-services"
+  repository: "garbage-service"
 replicas: "1"
 healthChecks:
   enabled: true
@@ -83,7 +83,7 @@ env: |
   - name: EGOV_MSG_PAY_LINK
     value: {{ index .Values "egov-msg-pay-link" | quote }}
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: gc-services
+    value: garbage-service
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
